@@ -1,0 +1,127 @@
+/* ---------- Missão do dia ---------- */
+
+.missao {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 16px;
+  align-items: center;
+  padding: 20px 22px;
+  background: var(--fundo-card);
+  border: 1px solid var(--linha);
+  border-left: 6px solid var(--cor-missao);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.missaoCompacta {
+  padding: 14px 16px;
+}
+
+.missaoIcone {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--cor-missao);
+  color: #fff;
+  font-size: 22px;
+  grid-row: span 2;
+  animation: conquista 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards 0.2s;
+}
+
+.missaoTexto {
+  min-width: 0;
+  padding-right: 48px;
+}
+
+.missaoTitulo {
+  font-size: 20px;
+  margin: 4px 0 4px;
+}
+
+.missaoDescricao {
+  margin: 0;
+  font-size: 14px;
+  color: var(--tinta-suave);
+  line-height: 1.5;
+}
+
+.missaoCta {
+  grid-column: 2;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--acento);
+  margin-top: 6px;
+}
+
+.missaoCta:hover {
+  text-decoration: underline;
+}
+
+.missaoBonus {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: var(--fonte-dado), monospace;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--fundo-alt);
+  color: var(--acento-escuro);
+}
+
+/* ---------- Barra de nível ---------- */
+
+.barraNivel {
+  width: 100%;
+}
+
+.barraRotulos {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--tinta-suave);
+  margin-bottom: 8px;
+}
+
+.barraRotulos strong {
+  color: var(--tinta);
+}
+
+.barraTotal {
+  font-family: var(--fonte-dado), monospace;
+  color: var(--acento-escuro);
+}
+
+.trilho {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--fundo-alt);
+  border: 1px solid var(--linha);
+  overflow: hidden;
+}
+
+.preenchimento {
+  height: 100%;
+  width: var(--progresso);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--acento) 0%, #3f9b6f 60%, var(--ouro) 100%);
+  animation: preencher 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) backwards 0.2s;
+}
+
+@keyframes preencher {
+  from {
+    width: 0;
+  }
+}
+
+.barraLegenda {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "reuse-web",
+  "version": "3.0.0",
+  "private": true,
+  "description": "ReUse! — frontend Next.js (App Router) da plataforma: mapa de pontos de coleta, catálogo, gamificação, assistente Eco e área administrativa. Consome a API Node.js/Express.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "next": "16.3.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-leaflet": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.9.0"
+  }
+}

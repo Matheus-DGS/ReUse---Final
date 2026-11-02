@@ -1,0 +1,399 @@
+.pagina {
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topo {
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background: linear-gradient(180deg, var(--fundo-alt) 0%, var(--fundo-card) 70%);
+}
+
+.identidade {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--acento);
+  color: #fff;
+  font-family: var(--fonte-display), serif;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0 0 0 5px var(--acento-claro);
+  animation: entrar-subindo 0.6s ease-out backwards;
+}
+
+.nome {
+  font-size: clamp(26px, 3.4vw, 34px);
+  color: var(--acento-escuro);
+  margin: 4px 0 2px;
+}
+
+.membro {
+  margin: 0;
+  font-size: 14px;
+  color: var(--tinta-suave);
+}
+
+.membro a {
+  color: var(--acento);
+  font-weight: 600;
+}
+
+.nivelSelo {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px 8px 8px;
+  border-radius: 999px;
+  background: var(--acento-escuro);
+  color: #fff;
+  font-family: var(--fonte-display), serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nivelSelo small {
+  display: block;
+  font-family: var(--fonte-dado), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.nivelSimbolo {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ouro);
+  font-size: 22px;
+  animation: conquista 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards 0.3s;
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.numero {
+  padding: 16px 18px;
+}
+
+.numero dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tinta-fraca);
+}
+
+.numero dd {
+  margin: 4px 0 0;
+  font-family: var(--fonte-display), serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.colunas {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+}
+
+.bloco {
+  padding: 22px 24px;
+}
+
+.h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.barras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.barras li {
+  display: grid;
+  grid-template-columns: 90px 1fr 36px;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.barraRotulo {
+  color: var(--tinta-suave);
+}
+
+.barraTrilho {
+  height: 12px;
+  background: var(--fundo-alt);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barraValor {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  animation: crescer 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards 0.2s;
+}
+
+@keyframes crescer {
+  from {
+    width: 0;
+  }
+}
+
+.barraNumero {
+  text-align: right;
+  font-family: var(--fonte-dado), monospace;
+}
+
+.trilhaNiveis {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.trilhaNiveis::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: var(--linha);
+}
+
+.trilhaNiveis li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 0;
+  color: var(--tinta-fraca);
+}
+
+.trilhaMarco {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--fundo-card);
+  border: 2px solid var(--linha);
+  font-size: 16px;
+  position: relative;
+}
+
+.trilhaNiveis li[data-atingido="true"] {
+  color: var(--tinta);
+}
+
+.trilhaNiveis li[data-atingido="true"] .trilhaMarco {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: #fff;
+}
+
+.trilhaNiveis li[data-atual="true"] .trilhaMarco {
+  background: var(--ouro);
+  border-color: var(--ouro);
+  animation: pulsar 2s infinite;
+}
+
+.trilhaNome {
+  font-weight: 600;
+}
+
+.trilhaMinimo {
+  margin-left: auto;
+  font-family: var(--fonte-dado), monospace;
+  font-size: 13px;
+}
+
+.secao {
+  margin-top: 12px;
+}
+
+.secaoTopo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.contagem {
+  font-family: var(--fonte-dado), monospace;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+}
+
+.conquistas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.conquista {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: var(--raio);
+  border: 1.5px dashed var(--linha);
+  background: transparent;
+  color: var(--tinta-fraca);
+}
+
+.conquista h3 {
+  font-size: 16px;
+  margin: 2px 0 4px;
+}
+
+.conquista p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.conquista[data-desbloqueada="true"] {
+  border: 1.5px solid #ecd6b6;
+  background: #fdf8f0;
+  color: var(--tinta);
+}
+
+.badge {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--fundo-alt);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.conquista[data-desbloqueada="true"] .badge {
+  background: var(--ouro);
+  color: #fff;
+  animation: conquista 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: calc(var(--ordem, 0) * 90ms + 200ms);
+}
+
+.historico {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.historico li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+}
+
+.historico li + li {
+  border-top: 1px solid var(--linha);
+}
+
+.historicoTexto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-size: 14.5px;
+}
+
+.historicoTexto a {
+  font-size: 13.5px;
+  color: var(--tinta-suave);
+}
+
+.historicoTexto a:hover {
+  color: var(--acento);
+}
+
+.historicoPontos {
+  margin-left: auto;
+  font-family: var(--fonte-dado), monospace;
+  color: var(--acento-escuro);
+  font-weight: 500;
+}
+
+.historicoQuando {
+  width: 70px;
+  text-align: right;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+}
+
+.vazio {
+  margin: 12px 0 0;
+  color: var(--tinta-suave);
+  font-size: 14.5px;
+}
+
+.vazio a {
+  color: var(--acento);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .numeros {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .colunas {
+    grid-template-columns: 1fr;
+  }
+
+  .conquistas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nivelSelo {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .conquistas {
+    grid-template-columns: 1fr;
+  }
+
+  .historicoQuando {
+    display: none;
+  }
+}

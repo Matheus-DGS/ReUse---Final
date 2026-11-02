@@ -1,0 +1,109 @@
+.raiz {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.painel {
+  display: flex;
+}
+
+.lancador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  min-width: 56px;
+  padding: 0 18px 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--acento);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 12px 30px -10px rgba(22, 63, 45, 0.6);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+  animation: entrar-subindo 0.5s ease-out backwards 0.6s;
+}
+
+.lancador:hover {
+  background: var(--acento-escuro);
+}
+
+.lancador:active {
+  transform: scale(0.95);
+}
+
+.lancador[data-aberto="true"] {
+  padding: 0;
+  justify-content: center;
+  width: 56px;
+  font-size: 20px;
+  background: var(--tinta);
+}
+
+.convite {
+  position: relative;
+  max-width: 260px;
+  padding: 12px 34px 12px 14px;
+  border-radius: 16px 16px 4px 16px;
+  background: var(--fundo-card);
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--tinta-suave);
+  animation: card-surgir 0.4s ease-out;
+}
+
+.convite strong {
+  color: var(--acento-escuro);
+}
+
+.conviteFechar {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--tinta-fraca);
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .raiz {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .painel {
+    position: fixed;
+    inset: 0;
+  }
+
+  .lancador[data-aberto="true"] {
+    display: none;
+  }
+
+  .rotulo {
+    display: none;
+  }
+
+  .lancador {
+    padding: 0;
+    width: 56px;
+    justify-content: center;
+  }
+}

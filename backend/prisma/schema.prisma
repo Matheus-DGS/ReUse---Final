@@ -1,0 +1,142 @@
+// Schema Prisma do ReUse!
+// Evolução do modelo definido na Atividade 01 (PBL - Modelagem de Dados).
+// Entidades originais: Usuario, Item, Favorito, FotoItem
+// Área "Descarte Consciente": PontoColeta, Descarte
+// Entrega final: campo Usuario.papel, que habilita a área administrativa da plataforma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  // Conexão direta (sem pooler) usada pelas migrations. Na Vercel + Neon ela é criada automaticamente.
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+model Usuario {
+  id           String        @id @default(cuid())
+  nome         String
+  email        String        @unique
+  senha        String
+  papel        Papel         @default(USUARIO)
+  dataCadastro DateTime      @default(now())
+
+  itens        Item[]        @relation("ItensDoUsuario")
+  favoritos    Favorito[]
+  pontosCriados PontoColeta[] @relation("PontosSugeridos")
+  descartes    Descarte[]
+
+  @@map("usuarios")
+}
+
+model Item {
+  id             String     @id @default(cuid())
+  nomeItem       String
+  descricao      String
+  categoria      Categoria
+  dataPublicacao DateTime   @default(now())
+
+  usuarioId      String
+  usuario        Usuario    @relation("ItensDoUsuario", fields: [usuarioId], references: [id], onDelete: Cascade)
+
+  fotos          FotoItem[]
+  favoritos      Favorito[]
+
+  @@index([categoria])
+  @@map("itens")
+}
+
+model Favorito {
+  id           String   @id @default(cuid())
+  dataFavorito DateTime @default(now())
+
+  usuarioId    String
+  usuario      Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+
+  itemId       String
+  item         Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@unique([usuarioId, itemId])
+  @@map("favoritos")
+}
+
+model FotoItem {
+  id         String   @id @default(cuid())
+  urlFoto    String
+  dataUpload DateTime @default(now())
+  principal  Boolean  @default(false)
+
+  itemId     String
+  item       Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@map("fotos_item")
+}
+
+// Local físico que recebe materiais recicláveis (ecoponto, PEV, cooperativa...)
+model PontoColeta {
+  id           String      @id @default(cuid())
+  nome         String
+  descricao    String
+  tipo         TipoPonto
+  endereco     String
+  bairro       String
+  cidade       String      @default("São Paulo")
+  latitude     Float
+  longitude    Float
+  horario      String
+  telefone     String?
+  materiais    Categoria[]
+  verificado   Boolean     @default(false)
+  dataCadastro DateTime    @default(now())
+
+  // Pontos sugeridos pela comunidade guardam quem os cadastrou
+  criadoPorId  String?
+  criadoPor    Usuario?    @relation("PontosSugeridos", fields: [criadoPorId], references: [id], onDelete: SetNull)
+
+  descartes    Descarte[]
+
+  @@index([cidade])
+  @@map("pontos_coleta")
+}
+
+// Registro de um descarte feito pelo usuário em um ponto — base da gamificação
+model Descarte {
+  id         String      @id @default(cuid())
+  categoria  Categoria
+  quantidade Int         @default(1)
+  pontos     Int
+  data       DateTime    @default(now())
+
+  usuarioId  String
+  usuario    Usuario     @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+
+  pontoId    String
+  ponto      PontoColeta @relation(fields: [pontoId], references: [id], onDelete: Cascade)
+
+  @@index([usuarioId, data])
+  @@map("descartes")
+}
+
+enum Categoria {
+  PAPEL
+  PLASTICO
+  VIDRO
+  METAL
+  ORGANICO
+  ELETRONICO
+}
+
+enum TipoPonto {
+  ECOPONTO
+  PEV
+  COOPERATIVA
+  PARCEIRO
+}
+
+// Perfil de acesso: ADMIN libera a área administrativa (/admin e /api/admin)
+enum Papel {
+  USUARIO
+  ADMIN
+}

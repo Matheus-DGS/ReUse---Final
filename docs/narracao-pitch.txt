@@ -1,0 +1,15 @@
+A maioria das pessoas quer reciclar, mas quase ninguém sabe onde descartar, nem como separar cada material. O ReUse resolve isso: uma plataforma colaborativa de descarte consciente. Tudo começou na fase um, com os wireframes. A identidade visual vem de lá, e usa as cores oficiais da coleta seletiva. Aqui, a cor já ensina.
+
+Esta é a área de descarte consciente. Eu filtro pelo material que tenho em mãos, e a lista e o mapa se ajustam juntos. No botão perto de mim, a plataforma usa a minha localização e ordena os pontos pela distância. E não é só tela: é a mesma A P I pública que o aplicativo mobile da fase três consome.
+
+Abrindo um ponto, eu vejo os materiais aceitos, a dica de preparo, o horário e a atividade da comunidade. Agora, o que a fase dois trouxe: o registro de descarte com gamificação. EcoPontos pelo descarte, mais o bônus da missão do dia, mais o bônus por visitar um ponto novo, a barra de nível subindo e uma conquista desbloqueada. Eletrônico vale mais ponto porque é o resíduo mais perigoso. E o limite de cinco registros por dia mantém o ranking justo.
+
+O ranking é o mecanismo de engajamento que veio do plano de marketing digital, da fase quatro, com pódio e ranking do mês. E a plataforma é colaborativa de verdade: se eu conheço um ponto que não está no mapa, eu clico, marco o local e ganho EcoPontos. Esse ponto entra com o selo comunidade. E é aí que a área administrativa entra.
+
+Na fase seis veio o Eco, o assistente da plataforma, feito com o Watson Assistant, da I B M. E ele não só responde: ele executa tarefas. Eu pergunto onde descarto pilhas perto de mim, e ele devolve os pontos mais próximos. Eu digo que registrei duas sacolas de vidro no Ecoponto Vila Mariana, ele pede a minha confirmação e registra, somando os EcoPontos na hora. Tudo que grava dados pede confirmação e exige login. A skill está versionada em código: sem as credenciais da I B M, um motor local interpreta a mesma skill. E o Eco também entende e responde por voz.
+
+Esta é a área administrativa. O painel traz as métricas da operação: pessoas, pontos de coleta, descartes do dia e do mês, volumes destinados e EcoPontos distribuídos. Aqui está o ponto que eu acabei de sugerir, esperando verificação. Eu aprovo, e no mapa público o selo comunidade vira verificado pela equipe. Nas outras abas, eu cuido do catálogo, anulo registros suspeitos e gerencio as contas. A comunidade sugere, a administração aprova, o mapa público muda.
+
+Para a entrega final, separamos o produto em dois deploys independentes. O frontend, em Next J S, está na Vercel. O backend, em Node J S, com Express e Prisma, está no Render, com Postgres gerenciado. O login devolve um token que o Next guarda em um cookie seguro, então ele nunca fica exposto ao navegador.
+
+Em seis fases, o ReUse saiu do wireframe e virou uma plataforma no ar: mapa, catálogo, gamificação, assistente com voz e área administrativa. Cada material tem um destino certo. E agora, encontrar esse destino é fácil.

@@ -1,0 +1,230 @@
+.header {
+  border-bottom: 1px solid var(--linha);
+  background: rgba(246, 244, 238, 0.92);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: var(--altura-header);
+}
+
+.marca {
+  font-family: var(--fonte-display), serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--acento-escuro);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--acento);
+  color: #fff;
+  font-size: 18px;
+  animation: entrar-subindo 0.6s ease-out backwards;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 24px;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.link {
+  position: relative;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--tinta-suave);
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.link:hover {
+  color: var(--tinta);
+  background: var(--fundo-alt);
+}
+
+.link[aria-current="page"] {
+  color: var(--acento-escuro);
+  font-weight: 600;
+}
+
+.link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -13px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--acento);
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pilula {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 4px;
+  border-radius: 999px;
+  background: var(--fundo-card);
+  border: 1.5px solid var(--linha);
+  font-size: 14px;
+  transition: border-color 0.15s ease;
+}
+
+.pilula:hover,
+.pilula[aria-current="page"] {
+  border-color: var(--acento);
+}
+
+.pilulaNivel {
+  background: var(--acento);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.pilulaPontos {
+  font-family: var(--fonte-dado), monospace;
+  font-weight: 500;
+}
+
+.pilulaPontos small {
+  font-family: var(--fonte-corpo), sans-serif;
+  color: var(--tinta-suave);
+  font-size: 12px;
+}
+
+.hamburguer {
+  display: none;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--linha);
+  border-radius: 12px;
+  background: var(--fundo-card);
+  cursor: pointer;
+  position: relative;
+}
+
+.barras,
+.barras::before,
+.barras::after {
+  position: absolute;
+  left: 11px;
+  width: 19px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--tinta);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.barras {
+  top: 20px;
+}
+
+.barras::before,
+.barras::after {
+  content: "";
+  left: 0;
+}
+
+.barras::before {
+  top: -6px;
+}
+
+.barras::after {
+  top: 6px;
+}
+
+.barras[data-aberto="true"] {
+  background: transparent;
+}
+
+.barras[data-aberto="true"]::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.barras[data-aberto="true"]::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* O menu vira hambúrguer cedo: com a sessão aberta são seis links, mais a pílula de EcoPontos
+   e o botão de sair — em telas de notebook isso não cabe em uma linha. */
+@media (max-width: 1060px) {
+  .hamburguer {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px 24px 24px;
+    background: var(--fundo);
+    border-bottom: 1px solid var(--linha);
+    box-shadow: var(--sombra);
+  }
+
+  .menu[data-aberto="true"] {
+    display: flex;
+    animation: entrar-subindo 0.25s ease-out;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .link {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .link[aria-current="page"]::after {
+    left: 0;
+    right: auto;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    height: auto;
+  }
+
+  .acoes {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

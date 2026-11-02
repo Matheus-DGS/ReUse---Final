@@ -1,0 +1,481 @@
+/* Área administrativa: layout de painel, com tabelas densas e métricas em destaque. */
+
+.pagina {
+  padding: 28px 0 72px;
+}
+
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-size: clamp(28px, 3.6vw, 38px);
+  color: var(--acento-escuro);
+  margin: 8px 0 6px;
+}
+
+.descricao {
+  color: var(--tinta-suave);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 62ch;
+}
+
+.cabecalho > div:first-child {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.identificacao {
+  font-family: var(--fonte-dado), monospace;
+  font-size: 12px;
+  color: var(--tinta-fraca);
+  text-align: right;
+  /* O e-mail é longo: sem isto o bloco empurra o cabeçalho para fora da tela */
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.identificacao strong {
+  display: block;
+  font-family: var(--fonte-corpo), sans-serif;
+  font-size: 14px;
+  color: var(--tinta);
+}
+
+/* ---------- navegação entre as áreas do painel ---------- */
+
+.abas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1.5px solid var(--linha);
+  margin-bottom: 26px;
+}
+
+.aba {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1.5px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.aba:hover {
+  color: var(--acento);
+}
+
+.aba[aria-current="page"] {
+  color: var(--acento-escuro);
+  border-bottom-color: var(--acento);
+}
+
+.contador {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--eletronico-laranja);
+  color: #fff;
+  font-family: var(--fonte-dado), monospace;
+  font-size: 11px;
+}
+
+/* ---------- métricas ---------- */
+
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin: 0 0 24px;
+}
+
+.metrica {
+  padding: 16px 18px;
+}
+
+.metrica dt {
+  font-family: var(--fonte-dado), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+}
+
+.metrica dd {
+  margin: 6px 0 0;
+  font-family: var(--fonte-display), Georgia, serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--acento-escuro);
+  line-height: 1;
+}
+
+.metrica small {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.colunas {
+  display: grid;
+  /* minmax(0, …) para as colunas poderem encolher abaixo do conteúdo (gráfico e tabelas) */
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+.bloco {
+  padding: 20px 22px;
+  min-width: 0;
+}
+
+.blocoTopo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.h2 {
+  font-size: 19px;
+  color: var(--acento-escuro);
+  margin: 0;
+}
+
+.legenda {
+  font-family: var(--fonte-dado), monospace;
+  font-size: 11px;
+  color: var(--tinta-fraca);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- gráfico de colunas (últimos dias) ---------- */
+
+.grafico {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 160px;
+  padding-top: 8px;
+}
+
+.coluna {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+}
+
+.colunaBarra {
+  width: 100%;
+  min-height: 3px;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, var(--acento) 0%, var(--acento-escuro) 100%);
+  transition: height 0.4s ease;
+}
+
+.colunaBarra[data-vazio="true"] {
+  background: var(--linha);
+}
+
+.colunaRotulo {
+  font-family: var(--fonte-dado), monospace;
+  font-size: 10px;
+  color: var(--tinta-fraca);
+}
+
+/* ---------- barras por material ---------- */
+
+.barras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.barras li {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.barraTrilho {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--fundo-alt);
+  overflow: hidden;
+}
+
+.barraValor {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.barraNumero {
+  font-family: var(--fonte-dado), monospace;
+  font-size: 13px;
+  color: var(--tinta-suave);
+  min-width: 56px;
+  text-align: right;
+}
+
+/* ---------- filtros ---------- */
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.filtros input[type="search"],
+.filtros select {
+  padding: 10px 14px;
+  border: 1.5px solid var(--linha);
+  border-radius: 10px;
+  background: var(--fundo-card);
+  font-size: 14px;
+  min-width: 200px;
+}
+
+.filtros input[type="search"]:focus,
+.filtros select:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+/* ---------- tabelas ---------- */
+
+.tabelaWrap {
+  overflow-x: auto;
+  background: var(--fundo-card);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 760px;
+}
+
+.tabela th {
+  text-align: left;
+  padding: 12px 16px;
+  font-family: var(--fonte-dado), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+  border-bottom: 1.5px solid var(--linha);
+  white-space: nowrap;
+}
+
+.tabela td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--fundo-alt);
+  vertical-align: middle;
+}
+
+.tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela tbody tr:hover {
+  background: var(--fundo-alt);
+}
+
+.principal {
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.secundario {
+  display: block;
+  font-size: 12.5px;
+  color: var(--tinta-fraca);
+  margin-top: 2px;
+}
+
+.numerico {
+  font-family: var(--fonte-dado), monospace;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cores {
+  display: inline-flex;
+  gap: 3px;
+  vertical-align: middle;
+}
+
+.vazio {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--tinta-suave);
+}
+
+/* ---------- lista de aprovações pendentes ---------- */
+
+.pendentes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pendente {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--linha);
+  border-left: 4px solid var(--eletronico-laranja);
+  border-radius: 10px;
+  background: var(--fundo);
+}
+
+.pendenteInfo strong {
+  display: block;
+  font-size: 15px;
+}
+
+/* ---------- botões de ação nas tabelas ---------- */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1.5px solid var(--linha);
+  background: var(--fundo-card);
+  color: var(--tinta-suave);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.botao:hover:not(:disabled) {
+  border-color: var(--acento);
+  color: var(--acento);
+}
+
+.botao:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.botao[data-variante="aprovar"] {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: #fff;
+}
+
+.botao[data-variante="aprovar"]:hover:not(:disabled) {
+  background: var(--acento-escuro);
+  border-color: var(--acento-escuro);
+  color: #fff;
+}
+
+.botao[data-variante="perigo"]:hover:not(:disabled) {
+  border-color: var(--plastico-vermelho);
+  color: var(--plastico-vermelho);
+}
+
+.mensagemErro {
+  display: block;
+  font-size: 12px;
+  color: var(--plastico-vermelho);
+  max-width: 220px;
+}
+
+.seletor {
+  padding: 7px 10px;
+  border: 1.5px solid var(--linha);
+  border-radius: 999px;
+  background: var(--fundo-card);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+  cursor: pointer;
+}
+
+.seletor:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+.nota {
+  margin: 20px 0 0;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .colunas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .bloco {
+    padding: 18px 16px;
+  }
+
+  .barras li {
+    grid-template-columns: 78px minmax(0, 1fr) auto;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .barraNumero {
+    min-width: 0;
+  }
+
+  .identificacao {
+    text-align: left;
+  }
+}

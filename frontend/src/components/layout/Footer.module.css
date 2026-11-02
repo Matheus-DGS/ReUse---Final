@@ -1,0 +1,57 @@
+.footer {
+  border-top: 1px solid var(--linha);
+  margin-top: 80px;
+  background: var(--fundo-alt);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px 48px;
+  padding-top: 36px;
+  padding-bottom: 28px;
+}
+
+.marca {
+  font-family: var(--fonte-display), serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--acento-escuro);
+  margin: 0 0 8px;
+}
+
+.texto {
+  font-size: 14px;
+  color: var(--tinta-suave);
+  line-height: 1.55;
+  max-width: 44ch;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-content: flex-start;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.links a:hover {
+  color: var(--acento);
+}
+
+.creditos {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--linha);
+  font-size: 13px;
+  color: var(--tinta-fraca);
+}
+
+@media (max-width: 700px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}

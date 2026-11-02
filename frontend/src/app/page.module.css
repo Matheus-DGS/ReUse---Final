@@ -1,0 +1,321 @@
+.hero {
+  background: linear-gradient(180deg, var(--fundo-alt) 0%, var(--fundo) 100%);
+  border-bottom: 1px solid var(--linha);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.titulo {
+  font-size: clamp(40px, 5.4vw, 64px);
+  line-height: 1.03;
+  margin: 14px 0 20px;
+  color: var(--acento-escuro);
+}
+
+.subtitulo {
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--tinta-suave);
+  max-width: 46ch;
+  margin: 0 0 28px;
+}
+
+.ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Trilha "Como funciona" — elemento de assinatura herdado da fase anterior */
+.trilha {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 32px 28px;
+  background: var(--fundo-card);
+  border: 1px solid var(--linha);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+}
+
+.trilhaLinha {
+  position: absolute;
+  left: 45px;
+  top: 48px;
+  bottom: 48px;
+  width: 2px;
+  background: repeating-linear-gradient(180deg, var(--linha) 0 6px, transparent 6px 12px);
+}
+
+.trilhaItem {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.trilhaNumero {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--acento);
+  color: #fff;
+  font-family: var(--fonte-dado), monospace;
+  font-weight: 500;
+  box-shadow: 0 0 0 6px var(--fundo-card);
+}
+
+.trilhaTitulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  margin: 6px 0 4px;
+}
+
+.trilhaCores {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.trilhaTexto {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--tinta-suave);
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.numeros > div {
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.numeros > div + div {
+  border-left: 1px solid var(--linha);
+}
+
+.numeros dd {
+  margin: 0;
+  font-family: var(--fonte-display), serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--acento-escuro);
+  line-height: 1;
+}
+
+.numeros dt {
+  font-size: 14px;
+  color: var(--tinta-suave);
+}
+
+.secao {
+  padding-top: 56px;
+}
+
+.mapaBloco {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 32px;
+  align-items: center;
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--acento-escuro);
+  color: #d7e6dc;
+}
+
+.mapaTexto p {
+  line-height: 1.6;
+  margin: 0 0 22px;
+}
+
+.mapaTexto :global(.eyebrow) {
+  color: #a9cdb8;
+}
+
+.mapaTexto .h2 {
+  color: #fff;
+  margin: 10px 0 12px;
+}
+
+.mapaTexto :global(.btn-primario) {
+  background: #fff;
+  color: var(--acento-escuro);
+}
+
+.mapaPreview {
+  display: block;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.mapaPreview:hover {
+  transform: scale(1.01);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* O preview é apenas ilustrativo: cliques vão para o link */
+.mapaPreview :global(.leaflet-container) {
+  pointer-events: none;
+}
+
+.duasColunas {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.topRanking {
+  padding: 20px 22px;
+}
+
+.topRankingCabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.topRankingCabecalho a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--acento);
+}
+
+.topRanking ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topRanking li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.topRanking li + li {
+  border-top: 1px solid var(--linha);
+}
+
+.topRanking li strong {
+  margin-left: auto;
+  font-family: var(--fonte-dado), monospace;
+  font-weight: 500;
+  color: var(--acento-escuro);
+}
+
+.topRanking p {
+  color: var(--tinta-suave);
+  margin: 0;
+}
+
+.posicao {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #9aa39c;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.posicao[data-posicao="1"] {
+  background: var(--ouro);
+}
+
+.posicao[data-posicao="3"] {
+  background: var(--organico-marrom);
+}
+
+.secaoTitulo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.h2 {
+  font-size: clamp(24px, 3vw, 30px);
+  margin-top: 6px;
+  line-height: 1.15;
+}
+
+.h3 {
+  font-size: 20px;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.verTodos {
+  font-weight: 600;
+  color: var(--acento);
+}
+
+@media (max-width: 900px) {
+  .heroInner,
+  .mapaBloco,
+  .duasColunas {
+    grid-template-columns: 1fr;
+  }
+
+  .heroInner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .numeros {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .numeros > div:nth-child(3) {
+    border-left: 0;
+  }
+
+  .numeros > div:nth-child(n + 3) {
+    border-top: 1px solid var(--linha);
+  }
+
+  .grade {
+    grid-template-columns: 1fr;
+  }
+
+  .mapaPreview {
+    height: 260px;
+  }
+}

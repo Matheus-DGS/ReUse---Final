@@ -1,0 +1,3404 @@
+{
+  "name": "ReUse! – Assistente Eco",
+  "description": "Assistente virtual da plataforma ReUse!: executa tarefas (registrar descartes, buscar pontos de coleta, favoritos, cadastro de materiais) e orienta o usuário sobre o uso da plataforma.",
+  "language": "pt-br",
+  "learning_opt_out": false,
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "enabled": false
+    }
+  },
+  "intents": [
+    {
+      "intent": "registrar_descarte",
+      "description": "Registrar um descarte e ganhar EcoPontos",
+      "examples": [
+        {
+          "text": "quero registrar um descarte"
+        },
+        {
+          "text": "registrar descarte"
+        },
+        {
+          "text": "acabei de descartar"
+        },
+        {
+          "text": "registrei 2 sacolas de vidro"
+        },
+        {
+          "text": "descartei pilhas na TecVerde"
+        },
+        {
+          "text": "levei papelão no ecoponto vila mariana"
+        },
+        {
+          "text": "deixei 3 sacos de plástico na cooperativa da mooca"
+        },
+        {
+          "text": "acabei de entregar latinhas"
+        },
+        {
+          "text": "quero ganhar pontos pelo descarte que fiz"
+        },
+        {
+          "text": "anota meu descarte"
+        },
+        {
+          "text": "registra minha reciclagem de hoje"
+        },
+        {
+          "text": "entreguei garrafas de vidro no PEV"
+        },
+        {
+          "text": "fiz um descarte agora"
+        },
+        {
+          "text": "adicionar descarte"
+        },
+        {
+          "text": "descartei 1 caixa de eletrônicos"
+        },
+        {
+          "text": "deixei sacolas de papel no ecoponto"
+        },
+        {
+          "text": "levei duas caixas de latinhas no pev santana"
+        },
+        {
+          "text": "coloquei o vidro no contêiner da cooperativa"
+        },
+        {
+          "text": "deixei o lixo reciclável no ponto de coleta"
+        },
+        {
+          "text": "hoje levei meus recicláveis ao ecoponto"
+        }
+      ]
+    },
+    {
+      "intent": "desfazer_descarte",
+      "description": "Cancelar o último descarte registrado por engano",
+      "examples": [
+        {
+          "text": "desfazer meu último descarte"
+        },
+        {
+          "text": "registrei errado"
+        },
+        {
+          "text": "cancelar o descarte que acabei de fazer"
+        },
+        {
+          "text": "apaga o último registro"
+        },
+        {
+          "text": "me enganei no descarte"
+        },
+        {
+          "text": "remover último descarte"
+        },
+        {
+          "text": "quero desfazer o registro"
+        },
+        {
+          "text": "o descarte foi registrado errado"
+        },
+        {
+          "text": "estorna meu último descarte"
+        },
+        {
+          "text": "anular descarte"
+        }
+      ]
+    },
+    {
+      "intent": "buscar_ponto",
+      "description": "Encontrar pontos de coleta para um material",
+      "examples": [
+        {
+          "text": "onde descarto pilhas"
+        },
+        {
+          "text": "onde posso jogar vidro"
+        },
+        {
+          "text": "ponto de coleta mais perto"
+        },
+        {
+          "text": "qual o ecoponto mais próximo"
+        },
+        {
+          "text": "onde levo meu celular velho"
+        },
+        {
+          "text": "tem lugar para descartar bateria perto de mim"
+        },
+        {
+          "text": "onde entregar latinhas"
+        },
+        {
+          "text": "procurar ponto de coleta de papel"
+        },
+        {
+          "text": "me mostra pontos que aceitam eletrônicos"
+        },
+        {
+          "text": "onde reciclar garrafa pet"
+        },
+        {
+          "text": "quero achar um lugar para descartar orgânico"
+        },
+        {
+          "text": "pontos de coleta perto de mim"
+        },
+        {
+          "text": "onde fica o ponto de coleta mais próximo"
+        },
+        {
+          "text": "buscar ponto para plástico"
+        }
+      ]
+    },
+    {
+      "intent": "consultar_impacto",
+      "description": "Consultar EcoPontos, nível e conquistas do usuário",
+      "examples": [
+        {
+          "text": "quantos ecopontos eu tenho"
+        },
+        {
+          "text": "qual meu nível"
+        },
+        {
+          "text": "meu saldo de pontos"
+        },
+        {
+          "text": "ver meu impacto"
+        },
+        {
+          "text": "quanto falta para o próximo nível"
+        },
+        {
+          "text": "quais conquistas eu tenho"
+        },
+        {
+          "text": "como estou indo"
+        },
+        {
+          "text": "meu progresso"
+        },
+        {
+          "text": "quantos pontos eu já fiz"
+        },
+        {
+          "text": "mostrar meu perfil de impacto"
+        }
+      ]
+    },
+    {
+      "intent": "missao_do_dia",
+      "description": "Consultar a missão diária",
+      "examples": [
+        {
+          "text": "qual a missão de hoje"
+        },
+        {
+          "text": "missão do dia"
+        },
+        {
+          "text": "tem missão hoje"
+        },
+        {
+          "text": "qual o desafio de hoje"
+        },
+        {
+          "text": "o que vale bônus hoje"
+        },
+        {
+          "text": "já cumpri a missão"
+        },
+        {
+          "text": "qual material dá bônus hoje"
+        },
+        {
+          "text": "missão diária"
+        }
+      ]
+    },
+    {
+      "intent": "consultar_ranking",
+      "description": "Consultar a posição no ranking",
+      "examples": [
+        {
+          "text": "qual minha posição no ranking"
+        },
+        {
+          "text": "quem está em primeiro lugar"
+        },
+        {
+          "text": "ver ranking"
+        },
+        {
+          "text": "estou em que lugar"
+        },
+        {
+          "text": "ranking do mês"
+        },
+        {
+          "text": "quem mais reciclou"
+        },
+        {
+          "text": "top do ranking"
+        },
+        {
+          "text": "minha colocação"
+        }
+      ]
+    },
+    {
+      "intent": "historico_descartes",
+      "description": "Listar os últimos descartes do usuário",
+      "examples": [
+        {
+          "text": "meus últimos descartes"
+        },
+        {
+          "text": "histórico de descartes"
+        },
+        {
+          "text": "o que eu já descartei"
+        },
+        {
+          "text": "ver meus registros"
+        },
+        {
+          "text": "quais descartes eu fiz"
+        },
+        {
+          "text": "lista dos meus descartes"
+        },
+        {
+          "text": "onde eu descartei da última vez"
+        }
+      ]
+    },
+    {
+      "intent": "favoritar_material",
+      "description": "Salvar um material do catálogo nos favoritos",
+      "examples": [
+        {
+          "text": "favoritar garrafa pet"
+        },
+        {
+          "text": "salvar pilhas nos favoritos"
+        },
+        {
+          "text": "adiciona latas de alumínio aos favoritos"
+        },
+        {
+          "text": "quero guardar esse material"
+        },
+        {
+          "text": "marcar como favorito"
+        },
+        {
+          "text": "salva potes de vidro para mim"
+        },
+        {
+          "text": "colocar caixa de papelão nos favoritos"
+        },
+        {
+          "text": "favoritar material"
+        }
+      ]
+    },
+    {
+      "intent": "listar_favoritos",
+      "description": "Listar os materiais favoritos",
+      "examples": [
+        {
+          "text": "meus favoritos"
+        },
+        {
+          "text": "ver favoritos"
+        },
+        {
+          "text": "quais materiais eu salvei"
+        },
+        {
+          "text": "mostrar lista de favoritos"
+        },
+        {
+          "text": "o que tem nos meus favoritos"
+        },
+        {
+          "text": "materiais salvos"
+        }
+      ]
+    },
+    {
+      "intent": "remover_favorito",
+      "description": "Remover um material dos favoritos",
+      "examples": [
+        {
+          "text": "tirar garrafa pet dos favoritos"
+        },
+        {
+          "text": "remover dos favoritos"
+        },
+        {
+          "text": "desfavoritar pilhas"
+        },
+        {
+          "text": "apagar latas dos meus favoritos"
+        },
+        {
+          "text": "não quero mais esse favorito"
+        },
+        {
+          "text": "excluir favorito"
+        },
+        {
+          "text": "tira isso dos favoritos"
+        },
+        {
+          "text": "tire os potes de vidro da minha lista de favoritos"
+        },
+        {
+          "text": "retirar caixa de papelão dos favoritos"
+        },
+        {
+          "text": "remove latas dos salvos"
+        }
+      ]
+    },
+    {
+      "intent": "cadastrar_material",
+      "description": "Cadastrar um novo material no catálogo",
+      "examples": [
+        {
+          "text": "quero cadastrar um material"
+        },
+        {
+          "text": "cadastrar novo material"
+        },
+        {
+          "text": "adicionar material ao catálogo"
+        },
+        {
+          "text": "incluir um item no catálogo"
+        },
+        {
+          "text": "criar material"
+        },
+        {
+          "text": "quero colocar um novo material na plataforma"
+        },
+        {
+          "text": "cadastra um item para mim"
+        },
+        {
+          "text": "novo material no catálogo"
+        }
+      ]
+    },
+    {
+      "intent": "navegar",
+      "description": "Abrir uma página da plataforma",
+      "examples": [
+        {
+          "text": "abrir o mapa"
+        },
+        {
+          "text": "me leva para o ranking"
+        },
+        {
+          "text": "ir para meu perfil"
+        },
+        {
+          "text": "abre os favoritos"
+        },
+        {
+          "text": "quero ver o catálogo"
+        },
+        {
+          "text": "voltar para a página inicial"
+        },
+        {
+          "text": "ir para a tela de sugerir ponto"
+        },
+        {
+          "text": "abrir página de login"
+        },
+        {
+          "text": "mostra o mapa de pontos"
+        },
+        {
+          "text": "navegar para materiais"
+        },
+        {
+          "text": "abrir formulário de novo material"
+        },
+        {
+          "text": "abrir o catálogo"
+        },
+        {
+          "text": "abrir o ranking"
+        }
+      ]
+    },
+    {
+      "intent": "cancelar",
+      "description": "Interromper a tarefa em andamento",
+      "examples": [
+        {
+          "text": "cancelar"
+        },
+        {
+          "text": "deixa pra lá"
+        },
+        {
+          "text": "esquece"
+        },
+        {
+          "text": "não quero mais"
+        },
+        {
+          "text": "parar"
+        },
+        {
+          "text": "sair dessa"
+        },
+        {
+          "text": "cancela isso"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_registrar_descarte",
+      "description": "Como registrar um descarte",
+      "examples": [
+        {
+          "text": "como registro um descarte"
+        },
+        {
+          "text": "como faço para registrar o que descartei"
+        },
+        {
+          "text": "como ganho ecopontos descartando"
+        },
+        {
+          "text": "passo a passo para registrar descarte"
+        },
+        {
+          "text": "como funciona o registro de descarte"
+        },
+        {
+          "text": "onde eu registro meu descarte"
+        },
+        {
+          "text": "como aviso que descartei"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_sugerir_ponto",
+      "description": "Como sugerir um novo ponto de coleta",
+      "examples": [
+        {
+          "text": "como sugerir um ponto de coleta"
+        },
+        {
+          "text": "conheço um ponto que não está no mapa"
+        },
+        {
+          "text": "como adiciono um ecoponto"
+        },
+        {
+          "text": "o ponto do meu bairro não aparece"
+        },
+        {
+          "text": "como cadastrar um ponto de coleta"
+        },
+        {
+          "text": "quero indicar um lugar de coleta"
+        },
+        {
+          "text": "como incluir um novo local no mapa"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_cadastrar_material",
+      "description": "Como cadastrar um material no catálogo",
+      "examples": [
+        {
+          "text": "como cadastrar um novo item"
+        },
+        {
+          "text": "como adiciono um material ao catálogo"
+        },
+        {
+          "text": "passo a passo para cadastrar material"
+        },
+        {
+          "text": "como faço para incluir um material"
+        },
+        {
+          "text": "como coloco foto no material"
+        },
+        {
+          "text": "como funciona o cadastro de materiais"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_ecopontos",
+      "description": "Como funcionam EcoPontos, níveis e missão",
+      "examples": [
+        {
+          "text": "como funcionam os ecopontos"
+        },
+        {
+          "text": "como ganho pontos"
+        },
+        {
+          "text": "quantos pontos vale cada material"
+        },
+        {
+          "text": "como subo de nível"
+        },
+        {
+          "text": "quais são os níveis"
+        },
+        {
+          "text": "o que são ecopontos"
+        },
+        {
+          "text": "como funciona a missão do dia"
+        },
+        {
+          "text": "como funciona a pontuação"
+        },
+        {
+          "text": "por que eletrônico vale mais"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_conquistas",
+      "description": "Como funcionam as conquistas e o ranking",
+      "examples": [
+        {
+          "text": "como desbloquear conquistas"
+        },
+        {
+          "text": "quais conquistas existem"
+        },
+        {
+          "text": "como funciona o ranking"
+        },
+        {
+          "text": "o que são as medalhas"
+        },
+        {
+          "text": "como aparecer no ranking"
+        },
+        {
+          "text": "como ganhar a conquista mapeador"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_limite",
+      "description": "Limite diário e pontos não recebidos",
+      "examples": [
+        {
+          "text": "por que não ganhei pontos"
+        },
+        {
+          "text": "não consigo registrar mais descartes"
+        },
+        {
+          "text": "existe limite de descartes"
+        },
+        {
+          "text": "apareceu limite diário atingido"
+        },
+        {
+          "text": "meus pontos não entraram"
+        },
+        {
+          "text": "por que o ponto não aceita meu material"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_localizacao",
+      "description": "Como usar a localização e traçar rota",
+      "examples": [
+        {
+          "text": "o botão perto de mim não funciona"
+        },
+        {
+          "text": "como permitir a localização"
+        },
+        {
+          "text": "como encontrar o ponto mais perto"
+        },
+        {
+          "text": "como traço a rota até o ponto"
+        },
+        {
+          "text": "localização negada"
+        },
+        {
+          "text": "como chego até o ecoponto"
+        },
+        {
+          "text": "o mapa não mostra onde eu estou"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_favoritos",
+      "description": "Como usar os favoritos",
+      "examples": [
+        {
+          "text": "como favoritar um material"
+        },
+        {
+          "text": "para que servem os favoritos"
+        },
+        {
+          "text": "como salvar um material"
+        },
+        {
+          "text": "onde vejo meus materiais salvos"
+        },
+        {
+          "text": "como tirar algo dos favoritos"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_conta",
+      "description": "Criar conta, entrar e sair",
+      "examples": [
+        {
+          "text": "como criar uma conta"
+        },
+        {
+          "text": "como faço login"
+        },
+        {
+          "text": "esqueci minha senha"
+        },
+        {
+          "text": "como sair da conta"
+        },
+        {
+          "text": "preciso de conta para usar"
+        },
+        {
+          "text": "como me cadastrar na plataforma"
+        },
+        {
+          "text": "não consigo entrar"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_separacao",
+      "description": "Como separar e preparar um material",
+      "examples": [
+        {
+          "text": "como separar o lixo"
+        },
+        {
+          "text": "como descartar vidro quebrado"
+        },
+        {
+          "text": "pilha pode ir no lixo comum"
+        },
+        {
+          "text": "precisa lavar a embalagem"
+        },
+        {
+          "text": "como preparar o papelão"
+        },
+        {
+          "text": "casca de fruta é reciclável"
+        },
+        {
+          "text": "como descarto isopor"
+        },
+        {
+          "text": "o que fazer com lata de tinta"
+        },
+        {
+          "text": "papel engordurado recicla"
+        },
+        {
+          "text": "tampinha vai junto com a garrafa"
+        }
+      ]
+    },
+    {
+      "intent": "ajuda_tipos_ponto",
+      "description": "Diferença entre ecoponto, PEV, cooperativa e parceiro",
+      "examples": [
+        {
+          "text": "o que é um pev"
+        },
+        {
+          "text": "o que é ecoponto"
+        },
+        {
+          "text": "qual a diferença entre ecoponto e pev"
+        },
+        {
+          "text": "o que significa ponto verificado"
+        },
+        {
+          "text": "o que é uma cooperativa de reciclagem"
+        },
+        {
+          "text": "o que são pontos parceiros"
+        },
+        {
+          "text": "o que quer dizer o selo comunidade"
+        }
+      ]
+    },
+    {
+      "intent": "sobre_reuse",
+      "description": "O que é a plataforma ReUse!",
+      "examples": [
+        {
+          "text": "o que é o reuse"
+        },
+        {
+          "text": "para que serve essa plataforma"
+        },
+        {
+          "text": "quem fez o reuse"
+        },
+        {
+          "text": "como o reuse funciona"
+        },
+        {
+          "text": "qual o objetivo do site"
+        }
+      ]
+    },
+    {
+      "intent": "o_que_voce_faz",
+      "description": "Menu de ajuda do assistente",
+      "examples": [
+        {
+          "text": "ajuda"
+        },
+        {
+          "text": "o que você faz"
+        },
+        {
+          "text": "o que você sabe fazer"
+        },
+        {
+          "text": "menu"
+        },
+        {
+          "text": "quais comandos existem"
+        },
+        {
+          "text": "me ajuda"
+        },
+        {
+          "text": "como você pode me ajudar"
+        },
+        {
+          "text": "opções"
+        }
+      ]
+    },
+    {
+      "intent": "saudacao",
+      "description": "Cumprimentos",
+      "examples": [
+        {
+          "text": "oi"
+        },
+        {
+          "text": "olá"
+        },
+        {
+          "text": "bom dia"
+        },
+        {
+          "text": "boa tarde"
+        },
+        {
+          "text": "boa noite"
+        },
+        {
+          "text": "e aí"
+        },
+        {
+          "text": "oi eco"
+        },
+        {
+          "text": "tudo bem"
+        }
+      ]
+    },
+    {
+      "intent": "agradecimento",
+      "description": "Agradecimentos",
+      "examples": [
+        {
+          "text": "obrigado"
+        },
+        {
+          "text": "valeu"
+        },
+        {
+          "text": "muito obrigada"
+        },
+        {
+          "text": "brigado"
+        },
+        {
+          "text": "ajudou muito"
+        },
+        {
+          "text": "perfeito, obrigado"
+        }
+      ]
+    },
+    {
+      "intent": "despedida",
+      "description": "Despedidas",
+      "examples": [
+        {
+          "text": "tchau"
+        },
+        {
+          "text": "até mais"
+        },
+        {
+          "text": "falou"
+        },
+        {
+          "text": "até logo"
+        },
+        {
+          "text": "encerrar conversa"
+        },
+        {
+          "text": "até amanhã"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "material",
+      "description": "Categoria de material reciclável (enum Categoria)",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "PAPEL",
+          "synonyms": [
+            "papel",
+            "papelão",
+            "papelao",
+            "caixa de papelão",
+            "jornal",
+            "revista",
+            "caderno",
+            "folhas",
+            "papéis"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PLASTICO",
+          "synonyms": [
+            "plástico",
+            "plastico",
+            "plásticos",
+            "garrafa pet",
+            "pet",
+            "sacola plástica",
+            "embalagem plástica",
+            "pote plástico",
+            "garrafas pet",
+            "isopor"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "VIDRO",
+          "synonyms": [
+            "vidro",
+            "vidros",
+            "garrafa de vidro",
+            "garrafas de vidro",
+            "pote de vidro",
+            "potes de vidro",
+            "vidro quebrado",
+            "frasco de vidro"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "METAL",
+          "synonyms": [
+            "metal",
+            "metais",
+            "lata",
+            "latas",
+            "latinha",
+            "latinhas",
+            "alumínio",
+            "aluminio",
+            "aço",
+            "tampinha",
+            "lata de tinta"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ORGANICO",
+          "synonyms": [
+            "orgânico",
+            "organico",
+            "orgânicos",
+            "restos de comida",
+            "resto de comida",
+            "casca",
+            "cascas",
+            "casca de fruta",
+            "borra de café",
+            "restos de alimentos",
+            "compostagem"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ELETRONICO",
+          "synonyms": [
+            "eletrônico",
+            "eletronico",
+            "eletrônicos",
+            "eletronicos",
+            "pilha",
+            "pilhas",
+            "bateria",
+            "baterias",
+            "celular",
+            "celular velho",
+            "carregador",
+            "cabo",
+            "cabos",
+            "e-lixo",
+            "lixo eletrônico",
+            "computador",
+            "notebook"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "TODOS",
+          "synonyms": [
+            "qualquer material",
+            "qualquer um",
+            "todos os materiais",
+            "tanto faz"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "pagina",
+      "description": "Páginas da plataforma (usadas no comando de navegação)",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "mapa",
+          "synonyms": [
+            "mapa",
+            "pontos de coleta",
+            "pontos",
+            "mapa de pontos"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ranking",
+          "synonyms": [
+            "ranking",
+            "classificação",
+            "placar"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "perfil",
+          "synonyms": [
+            "perfil",
+            "meu perfil",
+            "meu impacto",
+            "impacto"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "favoritos",
+          "synonyms": [
+            "favoritos",
+            "meus favoritos"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "materiais",
+          "synonyms": [
+            "catálogo",
+            "catalogo",
+            "materiais",
+            "catálogo de materiais"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sugerir_ponto",
+          "synonyms": [
+            "sugerir ponto",
+            "novo ponto",
+            "sugerir um ponto",
+            "tela de sugerir ponto"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cadastrar_material",
+          "synonyms": [
+            "formulário de novo material",
+            "formulário de material",
+            "tela de cadastro de material"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "inicio",
+          "synonyms": [
+            "início",
+            "inicio",
+            "página inicial",
+            "pagina inicial",
+            "home"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "login",
+          "synonyms": [
+            "login",
+            "página de login",
+            "entrar na conta"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cadastro",
+          "synonyms": [
+            "criar conta",
+            "cadastro de conta",
+            "página de cadastro"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "ponto",
+      "description": "Pontos de coleta conhecidos (nome ou bairro). Pontos novos são resolvidos pelo backend.",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Ecoponto Vila Mariana",
+          "synonyms": [
+            "vila mariana",
+            "ecoponto vila mariana"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PEV Estação Paulista",
+          "synonyms": [
+            "paulista",
+            "estação paulista",
+            "pev paulista",
+            "avenida paulista"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cooperativa Recicla Mooca",
+          "synonyms": [
+            "mooca",
+            "recicla mooca",
+            "cooperativa da mooca"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "TecVerde — Coleta de Eletrônicos",
+          "synonyms": [
+            "tecverde",
+            "tec verde",
+            "consolação"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Composteira Comunitária Pinheiros",
+          "synonyms": [
+            "pinheiros",
+            "composteira",
+            "composteira de pinheiros"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ecoponto Lapa",
+          "synonyms": [
+            "lapa",
+            "ecoponto lapa"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PEV Santana",
+          "synonyms": [
+            "santana",
+            "pev santana"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ecoponto Tatuapé",
+          "synonyms": [
+            "tatuapé",
+            "tatuape",
+            "ecoponto tatuapé"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cooperativa Butantã Sustentável",
+          "synonyms": [
+            "butantã",
+            "butanta",
+            "cooperativa do butantã"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PEV Museu do Ipiranga",
+          "synonyms": [
+            "ipiranga",
+            "museu do ipiranga"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Compostagem da Feira da Liberdade",
+          "synonyms": [
+            "liberdade",
+            "feira da liberdade"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Descarte Tech Itaim",
+          "synonyms": [
+            "itaim",
+            "itaim bibi",
+            "descarte tech"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PEV Parque da Aclimação",
+          "synonyms": [
+            "aclimação",
+            "aclimacao",
+            "parque da aclimação"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ecoponto Barra Funda",
+          "synonyms": [
+            "barra funda",
+            "ecoponto barra funda"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Coleta aberta do Condomínio Solar",
+          "synonyms": [
+            "perdizes",
+            "condomínio solar"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Mercado Verde Bom Retiro",
+          "synonyms": [
+            "bom retiro",
+            "mercado verde"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "item",
+      "description": "Materiais do catálogo (itens). Itens novos são resolvidos pelo backend.",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Garrafas PET",
+          "synonyms": [
+            "garrafa pet",
+            "garrafas pet",
+            "pet"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Caixas de papelão",
+          "synonyms": [
+            "caixa de papelão",
+            "caixas de papelão",
+            "papelão"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Potes de vidro",
+          "synonyms": [
+            "pote de vidro",
+            "potes de vidro"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Latas de alumínio",
+          "synonyms": [
+            "lata de alumínio",
+            "latas de alumínio",
+            "latas",
+            "latinha"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cascas e restos de alimentos",
+          "synonyms": [
+            "cascas",
+            "restos de alimentos",
+            "restos de comida"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Pilhas e baterias",
+          "synonyms": [
+            "pilhas",
+            "pilha",
+            "baterias",
+            "bateria"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "tipo_ponto",
+      "description": "Tipos de ponto de coleta",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "ECOPONTO",
+          "synonyms": [
+            "ecoponto",
+            "ecopontos"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PEV",
+          "synonyms": [
+            "pev",
+            "pevs",
+            "ponto de entrega voluntária"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "COOPERATIVA",
+          "synonyms": [
+            "cooperativa",
+            "cooperativas"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PARCEIRO",
+          "synonyms": [
+            "parceiro",
+            "parceiros",
+            "ponto parceiro"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "SELO",
+          "synonyms": [
+            "verificado",
+            "selo comunidade",
+            "comunidade",
+            "selo"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    }
+  ],
+  "counterexamples": [],
+  "dialog_nodes": [
+    {
+      "dialog_node": "boas_vindas",
+      "title": "Boas-vindas",
+      "type": "standard",
+      "conditions": "welcome",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Oi! Eu sou o **Eco**, o assistente virtual do ReUse! 🌱\n\nPosso **fazer tarefas por você**, como registrar descartes, encontrar pontos de coleta e favoritar materiais, e **tirar suas dúvidas** sobre a plataforma. Você pode digitar ou falar comigo pelo microfone."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Por onde começamos?",
+            "options": [
+              {
+                "label": "Registrar descarte",
+                "value": {
+                  "input": {
+                    "text": "quero registrar um descarte"
+                  }
+                }
+              },
+              {
+                "label": "Achar ponto de coleta",
+                "value": {
+                  "input": {
+                    "text": "onde descartar perto de mim"
+                  }
+                }
+              },
+              {
+                "label": "Meus EcoPontos",
+                "value": {
+                  "input": {
+                    "text": "quantos ecopontos eu tenho"
+                  }
+                }
+              },
+              {
+                "label": "Missão do dia",
+                "value": {
+                  "input": {
+                    "text": "qual a missão de hoje"
+                  }
+                }
+              },
+              {
+                "label": "Como ganho EcoPontos?",
+                "value": {
+                  "input": {
+                    "text": "como funcionam os ecopontos"
+                  }
+                }
+              },
+              {
+                "label": "Como separar o lixo?",
+                "value": {
+                  "input": {
+                    "text": "como separar o lixo"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "dialog_node": "cancelar_solto",
+      "title": "Cancelar sem tarefa em andamento",
+      "type": "standard",
+      "conditions": "#cancelar",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Não há nenhuma tarefa em andamento. Posso ajudar com outra coisa?"
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Sugestões",
+            "options": [
+              {
+                "label": "Registrar descarte",
+                "value": {
+                  "input": {
+                    "text": "quero registrar um descarte"
+                  }
+                }
+              },
+              {
+                "label": "Achar ponto de coleta",
+                "value": {
+                  "input": {
+                    "text": "onde descartar perto de mim"
+                  }
+                }
+              },
+              {
+                "label": "Meus EcoPontos",
+                "value": {
+                  "input": {
+                    "text": "quantos ecopontos eu tenho"
+                  }
+                }
+              },
+              {
+                "label": "Missão do dia",
+                "value": {
+                  "input": {
+                    "text": "qual a missão de hoje"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "boas_vindas"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte",
+      "title": "Tarefa: registrar descarte",
+      "type": "frame",
+      "conditions": "#registrar_descarte",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "registrar_descarte",
+              "categoria": "$categoria",
+              "quantidade": "$quantidade",
+              "ponto": "$ponto",
+              "cancelado": "$cancelado"
+            }
+          }
+        ]
+      },
+      "digress_out_slots": "not_allowed",
+      "previous_sibling": "cancelar_solto"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_categoria",
+      "type": "slot",
+      "parent": "tarefa_registrar_descarte",
+      "variable": "$categoria"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_categoria__input",
+      "type": "event_handler",
+      "parent": "tarefa_registrar_descarte__slot_categoria",
+      "event_name": "input",
+      "conditions": "@material",
+      "context": {
+        "categoria": "@material"
+      }
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_categoria__focus",
+      "type": "event_handler",
+      "parent": "tarefa_registrar_descarte__slot_categoria",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "option",
+            "title": "Qual material você descartou?",
+            "options": [
+              {
+                "label": "Papel",
+                "value": {
+                  "input": {
+                    "text": "papel"
+                  }
+                }
+              },
+              {
+                "label": "Plástico",
+                "value": {
+                  "input": {
+                    "text": "plástico"
+                  }
+                }
+              },
+              {
+                "label": "Vidro",
+                "value": {
+                  "input": {
+                    "text": "vidro"
+                  }
+                }
+              },
+              {
+                "label": "Metal",
+                "value": {
+                  "input": {
+                    "text": "metal"
+                  }
+                }
+              },
+              {
+                "label": "Orgânico",
+                "value": {
+                  "input": {
+                    "text": "orgânico"
+                  }
+                }
+              },
+              {
+                "label": "Eletrônico",
+                "value": {
+                  "input": {
+                    "text": "eletrônico"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_registrar_descarte__slot_categoria__input"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_quantidade",
+      "type": "slot",
+      "parent": "tarefa_registrar_descarte",
+      "variable": "$quantidade",
+      "previous_sibling": "tarefa_registrar_descarte__slot_categoria"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_quantidade__input",
+      "type": "event_handler",
+      "parent": "tarefa_registrar_descarte__slot_quantidade",
+      "event_name": "input",
+      "conditions": "@sys-number",
+      "context": {
+        "quantidade": "@sys-number"
+      }
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_quantidade__focus",
+      "type": "event_handler",
+      "parent": "tarefa_registrar_descarte__slot_quantidade",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Quantos volumes (sacolas ou caixas)? Pode ser de **1 a 5**."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_registrar_descarte__slot_quantidade__input"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_ponto",
+      "type": "slot",
+      "parent": "tarefa_registrar_descarte",
+      "variable": "$ponto",
+      "previous_sibling": "tarefa_registrar_descarte__slot_quantidade"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_ponto__input",
+      "type": "event_handler",
+      "parent": "tarefa_registrar_descarte__slot_ponto",
+      "event_name": "input",
+      "conditions": "@ponto || (slot_in_focus && !#cancelar)",
+      "context": {
+        "ponto": "<? input.text ?>"
+      }
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__slot_ponto__focus",
+      "type": "event_handler",
+      "parent": "tarefa_registrar_descarte__slot_ponto",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Em qual ponto de coleta? Digite o **nome ou o bairro** (ex.: *Vila Mariana*, *TecVerde*)."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_registrar_descarte__slot_ponto__input"
+    },
+    {
+      "dialog_node": "tarefa_registrar_descarte__cancelar",
+      "type": "event_handler",
+      "parent": "tarefa_registrar_descarte",
+      "event_name": "generic",
+      "conditions": "#cancelar",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Tudo bem, cancelei. Se precisar, é só chamar! 🌱"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "cancelado": true
+      },
+      "next_step": {
+        "behavior": "skip_all_slots"
+      },
+      "previous_sibling": "tarefa_registrar_descarte__slot_ponto"
+    },
+    {
+      "dialog_node": "tarefa_buscar_ponto",
+      "title": "Tarefa: buscar pontos de coleta",
+      "type": "frame",
+      "conditions": "#buscar_ponto",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "buscar_ponto",
+              "categoria": "$material_busca",
+              "cancelado": "$cancelado"
+            }
+          }
+        ]
+      },
+      "digress_out_slots": "not_allowed",
+      "previous_sibling": "tarefa_registrar_descarte"
+    },
+    {
+      "dialog_node": "tarefa_buscar_ponto__slot_material_busca",
+      "type": "slot",
+      "parent": "tarefa_buscar_ponto",
+      "variable": "$material_busca"
+    },
+    {
+      "dialog_node": "tarefa_buscar_ponto__slot_material_busca__input",
+      "type": "event_handler",
+      "parent": "tarefa_buscar_ponto__slot_material_busca",
+      "event_name": "input",
+      "conditions": "@material",
+      "context": {
+        "material_busca": "@material"
+      }
+    },
+    {
+      "dialog_node": "tarefa_buscar_ponto__slot_material_busca__focus",
+      "type": "event_handler",
+      "parent": "tarefa_buscar_ponto__slot_material_busca",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "option",
+            "title": "Para qual material você procura um ponto?",
+            "options": [
+              {
+                "label": "Papel",
+                "value": {
+                  "input": {
+                    "text": "papel"
+                  }
+                }
+              },
+              {
+                "label": "Plástico",
+                "value": {
+                  "input": {
+                    "text": "plástico"
+                  }
+                }
+              },
+              {
+                "label": "Vidro",
+                "value": {
+                  "input": {
+                    "text": "vidro"
+                  }
+                }
+              },
+              {
+                "label": "Metal",
+                "value": {
+                  "input": {
+                    "text": "metal"
+                  }
+                }
+              },
+              {
+                "label": "Orgânico",
+                "value": {
+                  "input": {
+                    "text": "orgânico"
+                  }
+                }
+              },
+              {
+                "label": "Eletrônico",
+                "value": {
+                  "input": {
+                    "text": "eletrônico"
+                  }
+                }
+              },
+              {
+                "label": "Qualquer material",
+                "value": {
+                  "input": {
+                    "text": "qualquer material"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_buscar_ponto__slot_material_busca__input"
+    },
+    {
+      "dialog_node": "tarefa_buscar_ponto__cancelar",
+      "type": "event_handler",
+      "parent": "tarefa_buscar_ponto",
+      "event_name": "generic",
+      "conditions": "#cancelar",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Tudo bem, cancelei. Se precisar, é só chamar! 🌱"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "cancelado": true
+      },
+      "next_step": {
+        "behavior": "skip_all_slots"
+      },
+      "previous_sibling": "tarefa_buscar_ponto__slot_material_busca"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material",
+      "title": "Tarefa: cadastrar material no catálogo",
+      "type": "frame",
+      "conditions": "#cadastrar_material",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "cadastrar_material",
+              "nome": "$nome_material",
+              "categoria": "$categoria_material",
+              "descricao": "$descricao_material",
+              "cancelado": "$cancelado"
+            }
+          }
+        ]
+      },
+      "digress_out_slots": "not_allowed",
+      "previous_sibling": "tarefa_buscar_ponto"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_nome_material",
+      "type": "slot",
+      "parent": "tarefa_cadastrar_material",
+      "variable": "$nome_material"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_nome_material__input",
+      "type": "event_handler",
+      "parent": "tarefa_cadastrar_material__slot_nome_material",
+      "event_name": "input",
+      "conditions": "slot_in_focus && !#cancelar",
+      "context": {
+        "nome_material": "<? input.text ?>"
+      }
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_nome_material__focus",
+      "type": "event_handler",
+      "parent": "tarefa_cadastrar_material__slot_nome_material",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Vamos lá! Qual é o **nome** do material? (ex.: *Caixa de leite longa vida*)"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_cadastrar_material__slot_nome_material__input"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_categoria_material",
+      "type": "slot",
+      "parent": "tarefa_cadastrar_material",
+      "variable": "$categoria_material",
+      "previous_sibling": "tarefa_cadastrar_material__slot_nome_material"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_categoria_material__input",
+      "type": "event_handler",
+      "parent": "tarefa_cadastrar_material__slot_categoria_material",
+      "event_name": "input",
+      "conditions": "@material",
+      "context": {
+        "categoria_material": "@material"
+      }
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_categoria_material__focus",
+      "type": "event_handler",
+      "parent": "tarefa_cadastrar_material__slot_categoria_material",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "option",
+            "title": "Em qual categoria ele se encaixa?",
+            "options": [
+              {
+                "label": "Papel",
+                "value": {
+                  "input": {
+                    "text": "papel"
+                  }
+                }
+              },
+              {
+                "label": "Plástico",
+                "value": {
+                  "input": {
+                    "text": "plástico"
+                  }
+                }
+              },
+              {
+                "label": "Vidro",
+                "value": {
+                  "input": {
+                    "text": "vidro"
+                  }
+                }
+              },
+              {
+                "label": "Metal",
+                "value": {
+                  "input": {
+                    "text": "metal"
+                  }
+                }
+              },
+              {
+                "label": "Orgânico",
+                "value": {
+                  "input": {
+                    "text": "orgânico"
+                  }
+                }
+              },
+              {
+                "label": "Eletrônico",
+                "value": {
+                  "input": {
+                    "text": "eletrônico"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_cadastrar_material__slot_categoria_material__input"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_descricao_material",
+      "type": "slot",
+      "parent": "tarefa_cadastrar_material",
+      "variable": "$descricao_material",
+      "previous_sibling": "tarefa_cadastrar_material__slot_categoria_material"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_descricao_material__input",
+      "type": "event_handler",
+      "parent": "tarefa_cadastrar_material__slot_descricao_material",
+      "event_name": "input",
+      "conditions": "slot_in_focus && !#cancelar",
+      "context": {
+        "descricao_material": "<? input.text ?>"
+      }
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__slot_descricao_material__focus",
+      "type": "event_handler",
+      "parent": "tarefa_cadastrar_material__slot_descricao_material",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Agora descreva o material e **como prepará-lo** para a reciclagem (mínimo de 10 caracteres)."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_cadastrar_material__slot_descricao_material__input"
+    },
+    {
+      "dialog_node": "tarefa_cadastrar_material__cancelar",
+      "type": "event_handler",
+      "parent": "tarefa_cadastrar_material",
+      "event_name": "generic",
+      "conditions": "#cancelar",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Tudo bem, cancelei. Se precisar, é só chamar! 🌱"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "cancelado": true
+      },
+      "next_step": {
+        "behavior": "skip_all_slots"
+      },
+      "previous_sibling": "tarefa_cadastrar_material__slot_descricao_material"
+    },
+    {
+      "dialog_node": "tarefa_favoritar",
+      "title": "Tarefa: favoritar material",
+      "type": "frame",
+      "conditions": "#favoritar_material",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "favoritar_material",
+              "item": "$item_favorito",
+              "cancelado": "$cancelado"
+            }
+          }
+        ]
+      },
+      "digress_out_slots": "not_allowed",
+      "previous_sibling": "tarefa_cadastrar_material"
+    },
+    {
+      "dialog_node": "tarefa_favoritar__slot_item_favorito",
+      "type": "slot",
+      "parent": "tarefa_favoritar",
+      "variable": "$item_favorito"
+    },
+    {
+      "dialog_node": "tarefa_favoritar__slot_item_favorito__input",
+      "type": "event_handler",
+      "parent": "tarefa_favoritar__slot_item_favorito",
+      "event_name": "input",
+      "conditions": "@item || (slot_in_focus && !#cancelar)",
+      "context": {
+        "item_favorito": "<? input.text ?>"
+      }
+    },
+    {
+      "dialog_node": "tarefa_favoritar__slot_item_favorito__focus",
+      "type": "event_handler",
+      "parent": "tarefa_favoritar__slot_item_favorito",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Qual material do catálogo você quer favoritar? (ex.: *Garrafas PET*)"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_favoritar__slot_item_favorito__input"
+    },
+    {
+      "dialog_node": "tarefa_favoritar__cancelar",
+      "type": "event_handler",
+      "parent": "tarefa_favoritar",
+      "event_name": "generic",
+      "conditions": "#cancelar",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Tudo bem, cancelei. Se precisar, é só chamar! 🌱"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "cancelado": true
+      },
+      "next_step": {
+        "behavior": "skip_all_slots"
+      },
+      "previous_sibling": "tarefa_favoritar__slot_item_favorito"
+    },
+    {
+      "dialog_node": "tarefa_remover_favorito",
+      "title": "Tarefa: remover favorito",
+      "type": "frame",
+      "conditions": "#remover_favorito",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "remover_favorito",
+              "item": "$item_remover",
+              "cancelado": "$cancelado"
+            }
+          }
+        ]
+      },
+      "digress_out_slots": "not_allowed",
+      "previous_sibling": "tarefa_favoritar"
+    },
+    {
+      "dialog_node": "tarefa_remover_favorito__slot_item_remover",
+      "type": "slot",
+      "parent": "tarefa_remover_favorito",
+      "variable": "$item_remover"
+    },
+    {
+      "dialog_node": "tarefa_remover_favorito__slot_item_remover__input",
+      "type": "event_handler",
+      "parent": "tarefa_remover_favorito__slot_item_remover",
+      "event_name": "input",
+      "conditions": "@item || (slot_in_focus && !#cancelar)",
+      "context": {
+        "item_remover": "<? input.text ?>"
+      }
+    },
+    {
+      "dialog_node": "tarefa_remover_favorito__slot_item_remover__focus",
+      "type": "event_handler",
+      "parent": "tarefa_remover_favorito__slot_item_remover",
+      "event_name": "focus",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Qual material você quer tirar dos favoritos?"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_remover_favorito__slot_item_remover__input"
+    },
+    {
+      "dialog_node": "tarefa_remover_favorito__cancelar",
+      "type": "event_handler",
+      "parent": "tarefa_remover_favorito",
+      "event_name": "generic",
+      "conditions": "#cancelar",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Tudo bem, cancelei. Se precisar, é só chamar! 🌱"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "cancelado": true
+      },
+      "next_step": {
+        "behavior": "skip_all_slots"
+      },
+      "previous_sibling": "tarefa_remover_favorito__slot_item_remover"
+    },
+    {
+      "dialog_node": "tarefa_desfazer_descarte",
+      "title": "Tarefa: desfazer último descarte",
+      "type": "standard",
+      "conditions": "#desfazer_descarte",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "desfazer_descarte"
+            }
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_remover_favorito"
+    },
+    {
+      "dialog_node": "tarefa_consultar_impacto",
+      "title": "Tarefa: consultar impacto",
+      "type": "standard",
+      "conditions": "#consultar_impacto",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "consultar_impacto"
+            }
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_desfazer_descarte"
+    },
+    {
+      "dialog_node": "tarefa_missao_do_dia",
+      "title": "Tarefa: missão do dia",
+      "type": "standard",
+      "conditions": "#missao_do_dia",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "missao_do_dia"
+            }
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_consultar_impacto"
+    },
+    {
+      "dialog_node": "tarefa_consultar_ranking",
+      "title": "Tarefa: consultar ranking",
+      "type": "standard",
+      "conditions": "#consultar_ranking",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "consultar_ranking"
+            }
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_missao_do_dia"
+    },
+    {
+      "dialog_node": "tarefa_historico",
+      "title": "Tarefa: histórico de descartes",
+      "type": "standard",
+      "conditions": "#historico_descartes",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "historico_descartes"
+            }
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_consultar_ranking"
+    },
+    {
+      "dialog_node": "tarefa_listar_favoritos",
+      "title": "Tarefa: listar favoritos",
+      "type": "standard",
+      "conditions": "#listar_favoritos",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "listar_favoritos"
+            }
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_historico"
+    },
+    {
+      "dialog_node": "tarefa_navegar",
+      "title": "Tarefa: abrir página",
+      "type": "standard",
+      "conditions": "#navegar && @pagina",
+      "output": {
+        "generic": [
+          {
+            "response_type": "user_defined",
+            "user_defined": {
+              "acao": "navegar",
+              "pagina": "@pagina"
+            }
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_listar_favoritos"
+    },
+    {
+      "dialog_node": "tarefa_navegar_sem_pagina",
+      "title": "Tarefa: abrir página (sem destino)",
+      "type": "standard",
+      "conditions": "#navegar",
+      "output": {
+        "generic": [
+          {
+            "response_type": "option",
+            "title": "Para qual página você quer ir?",
+            "options": [
+              {
+                "label": "Mapa de pontos",
+                "value": {
+                  "input": {
+                    "text": "abrir o mapa"
+                  }
+                }
+              },
+              {
+                "label": "Meu impacto",
+                "value": {
+                  "input": {
+                    "text": "ir para meu perfil"
+                  }
+                }
+              },
+              {
+                "label": "Ranking",
+                "value": {
+                  "input": {
+                    "text": "abrir o ranking"
+                  }
+                }
+              },
+              {
+                "label": "Catálogo",
+                "value": {
+                  "input": {
+                    "text": "abrir o catálogo"
+                  }
+                }
+              },
+              {
+                "label": "Favoritos",
+                "value": {
+                  "input": {
+                    "text": "abrir os favoritos"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_navegar"
+    },
+    {
+      "dialog_node": "ajuda_registrar_descarte",
+      "title": "Ajuda: registrar descarte",
+      "type": "standard",
+      "conditions": "#ajuda_registrar_descarte",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Registrar um descarte é simples:\n\n1. Leve o material separado até um ponto de coleta.\n2. Abra o ponto em [Pontos de coleta](/pontos) e clique em **Detalhes**.\n3. No quadro **Registre seu descarte**, escolha o material e a quantidade de volumes (1 a 5).\n4. Clique em **Registrar descarte** e veja os EcoPontos que você ganhou. 🎉\n\n💡 Atalho: é só me dizer algo como *“registrei 2 sacolas de vidro no Ecoponto Vila Mariana”* que eu faço o registro para você. É preciso estar logado."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Quer tentar agora?",
+            "options": [
+              {
+                "label": "Registrar pelo chat",
+                "value": {
+                  "input": {
+                    "text": "quero registrar um descarte"
+                  }
+                }
+              },
+              {
+                "label": "Achar um ponto",
+                "value": {
+                  "input": {
+                    "text": "onde descartar perto de mim"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "tarefa_navegar_sem_pagina"
+    },
+    {
+      "dialog_node": "ajuda_sugerir_ponto",
+      "title": "Ajuda: sugerir ponto de coleta",
+      "type": "standard",
+      "conditions": "#ajuda_sugerir_ponto",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Conhece um local que ainda não está no mapa? Veja como sugerir:\n\n1. Entre na sua conta.\n2. Acesse [Sugerir ponto](/pontos/novo) (também há um botão no fim da página de pontos).\n3. Preencha nome, tipo, horário e **marque os materiais aceitos**.\n4. **Clique no mapa** para marcar a posição exata, ou use **Estou no local** se estiver lá.\n5. Envie a sugestão.\n\nO ponto aparece na hora com o selo **Comunidade** e você ganha **+30 EcoPontos** e a conquista **Mapeador**. ✚"
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Mais alguma coisa?",
+            "options": [
+              {
+                "label": "Abrir sugerir ponto",
+                "value": {
+                  "input": {
+                    "text": "ir para a tela de sugerir ponto"
+                  }
+                }
+              },
+              {
+                "label": "O que é o selo Comunidade?",
+                "value": {
+                  "input": {
+                    "text": "o que quer dizer o selo comunidade"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_registrar_descarte"
+    },
+    {
+      "dialog_node": "ajuda_cadastrar_material",
+      "title": "Ajuda: cadastrar material",
+      "type": "standard",
+      "conditions": "#ajuda_cadastrar_material",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Para cadastrar um material no catálogo:\n\n1. Entre na sua conta.\n2. Abra o [Catálogo](/materiais) e clique em **+ Cadastrar material**.\n3. Informe o **nome**, escolha a **categoria** e descreva **como descartar** o material.\n4. Se quiser, cole o **link de uma foto** (começando com https://). Sem foto, o card usa a cor da categoria.\n5. Clique em **Cadastrar material** e ganhe **+10 EcoPontos**.\n\n💡 Também dá para cadastrar por aqui: diga *“quero cadastrar um material”*."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "O que prefere?",
+            "options": [
+              {
+                "label": "Cadastrar pelo chat",
+                "value": {
+                  "input": {
+                    "text": "quero cadastrar um material"
+                  }
+                }
+              },
+              {
+                "label": "Abrir o formulário",
+                "value": {
+                  "input": {
+                    "text": "abrir formulário de novo material"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_sugerir_ponto"
+    },
+    {
+      "dialog_node": "ajuda_ecopontos",
+      "title": "Ajuda: EcoPontos, níveis e missão",
+      "type": "standard",
+      "conditions": "#ajuda_ecopontos",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Os **EcoPontos** recompensam o descarte correto. Cada volume (sacola ou caixa) vale:\n\n- **Orgânico:** 4 pontos\n- **Papel e plástico:** 5 pontos\n- **Vidro e metal:** 8 pontos\n- **Eletrônico:** 15 pontos, porque é o resíduo mais perigoso no lixo comum\n\n**Bônus:** +20 na **missão do dia** (a categoria muda todo dia), +10 no primeiro descarte em cada ponto, +30 por ponto sugerido e +10 por material cadastrado.\n\n**Níveis:** Semente (0) → Broto (60) → Muda (180) → Árvore (400) → Floresta (800). Acompanhe tudo em [Meu impacto](/perfil)."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Quer consultar?",
+            "options": [
+              {
+                "label": "Meus EcoPontos",
+                "value": {
+                  "input": {
+                    "text": "quantos ecopontos eu tenho"
+                  }
+                }
+              },
+              {
+                "label": "Missão de hoje",
+                "value": {
+                  "input": {
+                    "text": "qual a missão de hoje"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_cadastrar_material"
+    },
+    {
+      "dialog_node": "ajuda_conquistas",
+      "title": "Ajuda: conquistas e ranking",
+      "type": "standard",
+      "conditions": "#ajuda_conquistas",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Existem **9 conquistas** e elas são desbloqueadas automaticamente:\n\n- **Primeiro passo:** registrar o primeiro descarte\n- **Separador nato:** descartar 4 categorias diferentes\n- **Explorador urbano:** usar 3 pontos diferentes\n- **Hábito verde:** descartar em 3 dias diferentes\n- **Caçador de e-lixo:** descartar um eletrônico\n- **Mapeador:** sugerir um ponto\n- **Curador:** cadastrar um material\n- **Colecionador:** salvar 5 favoritos\n- **Cem EcoPontos:** somar 100 pontos\n\nNo [Ranking](/ranking) você aparece com o primeiro nome e a inicial do sobrenome. Há o ranking **geral** e o **do mês**."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Ver agora?",
+            "options": [
+              {
+                "label": "Minha posição",
+                "value": {
+                  "input": {
+                    "text": "qual minha posição no ranking"
+                  }
+                }
+              },
+              {
+                "label": "Minhas conquistas",
+                "value": {
+                  "input": {
+                    "text": "ver meu impacto"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_ecopontos"
+    },
+    {
+      "dialog_node": "ajuda_limite",
+      "title": "Ajuda: limite diário e pontos não recebidos",
+      "type": "standard",
+      "conditions": "#ajuda_limite",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Algumas regras garantem um ranking justo:\n\n- **Limite diário:** até **5 registros de descarte por dia**. O contador zera à meia-noite (horário de Brasília).\n- **Material aceito:** o ponto precisa receber o material informado. Veja os materiais na página do ponto.\n- **Missão do dia:** o bônus de +20 vale só no **primeiro** descarte da categoria do dia.\n- **Registro errado?** Você pode desfazer o último descarte em até 30 minutos. É só me pedir: *“desfazer meu último descarte”*."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_conquistas"
+    },
+    {
+      "dialog_node": "ajuda_localizacao",
+      "title": "Ajuda: localização e rota",
+      "type": "standard",
+      "conditions": "#ajuda_localizacao",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Para encontrar o ponto mais perto de você:\n\n1. Abra [Pontos de coleta](/pontos) e clique em **Perto de mim**.\n2. Quando o navegador perguntar, clique em **Permitir**.\n3. A lista passa a ser ordenada pela distância e o ponto mais próximo aparece em destaque.\n\n**Apareceu “permissão negada”?** Clique no ícone de cadeado ao lado do endereço do site, ative **Localização** e recarregue a página. Outra opção é buscar pelo seu bairro.\n\n**Como chegar:** na página do ponto, use **Traçar rota até aqui**. A rota abre no Google Maps."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Quer que eu procure?",
+            "options": [
+              {
+                "label": "Pontos perto de mim",
+                "value": {
+                  "input": {
+                    "text": "onde descartar perto de mim"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_limite"
+    },
+    {
+      "dialog_node": "ajuda_favoritos",
+      "title": "Ajuda: favoritos",
+      "type": "standard",
+      "conditions": "#ajuda_favoritos",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Os **favoritos** guardam materiais que você quer consultar depois:\n\n1. Abra um material no [Catálogo](/materiais).\n2. Clique em **☆ Favoritar**. Para remover, clique de novo em **★ Favoritado**.\n3. Veja a lista completa em [Favoritos](/favoritos).\n\nPor aqui também funciona: *“favoritar garrafa pet”* ou *“tirar pilhas dos favoritos”*."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Atalhos",
+            "options": [
+              {
+                "label": "Ver meus favoritos",
+                "value": {
+                  "input": {
+                    "text": "meus favoritos"
+                  }
+                }
+              },
+              {
+                "label": "Favoritar um material",
+                "value": {
+                  "input": {
+                    "text": "favoritar material"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_localizacao"
+    },
+    {
+      "dialog_node": "ajuda_conta",
+      "title": "Ajuda: conta",
+      "type": "standard",
+      "conditions": "#ajuda_conta",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Sobre a sua conta:\n\n- **Criar conta:** acesse [Criar conta](/cadastro) e informe nome, e-mail e uma senha com pelo menos 6 caracteres.\n- **Entrar:** use [Entrar](/login) com e-mail e senha.\n- **Sair:** clique em **Sair**, no canto superior direito (no celular, dentro do menu ☰).\n- **Esqueci a senha:** a recuperação automática ainda não está disponível. Crie uma nova conta ou fale com a equipe do projeto.\n\nSem conta você já pode ver o mapa, o catálogo e o ranking. Para **registrar descartes, favoritar e sugerir pontos**, é preciso entrar."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_favoritos"
+    },
+    {
+      "dialog_node": "ajuda_separacao_papel",
+      "title": "Ajuda: separação — papel",
+      "type": "standard",
+      "conditions": "#ajuda_separacao && @material:PAPEL",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "📦 **Papel e papelão (coletor azul)**\n\n✅ **Pode:** caixas, jornais, revistas, cadernos e folhas.\n❌ **Não pode:** papel engordurado (caixa de pizza suja), guardanapo usado, papel higiênico e papel plastificado.\n\n**Como preparar:** mantenha **limpo e seco** e **desmonte as caixas** para ocupar menos espaço."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Próximo passo",
+            "options": [
+              {
+                "label": "Onde descartar papel?",
+                "value": {
+                  "input": {
+                    "text": "onde descartar papel"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_conta"
+    },
+    {
+      "dialog_node": "ajuda_separacao_plastico",
+      "title": "Ajuda: separação — plástico",
+      "type": "standard",
+      "conditions": "#ajuda_separacao && @material:PLASTICO",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "🧴 **Plástico (coletor vermelho)**\n\n✅ **Pode:** garrafas PET, potes, sacolas, embalagens de limpeza e tampinhas.\n❌ **Evite:** embalagens muito sujas de comida e fraldas. O **isopor** é reciclável, mas nem todo ponto recebe: confirme antes de levar.\n\n**Como preparar:** **enxágue** para tirar restos e **amasse** as garrafas. A tampinha pode ir junto."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Próximo passo",
+            "options": [
+              {
+                "label": "Onde descartar plástico?",
+                "value": {
+                  "input": {
+                    "text": "onde descartar plástico"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_separacao_papel"
+    },
+    {
+      "dialog_node": "ajuda_separacao_vidro",
+      "title": "Ajuda: separação — vidro",
+      "type": "standard",
+      "conditions": "#ajuda_separacao && @material:VIDRO",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "🍾 **Vidro (coletor verde)**\n\n✅ **Pode:** garrafas, potes e frascos.\n❌ **Não pode:** espelho, lâmpada, cerâmica, porcelana e vidro temperado de box ou janela.\n\n**Como preparar:** retire as tampas e enxágue. **Vidro quebrado** deve ir **embrulhado em jornal** ou dentro de uma caixa identificada, para proteger quem faz a coleta."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Próximo passo",
+            "options": [
+              {
+                "label": "Onde descartar vidro?",
+                "value": {
+                  "input": {
+                    "text": "onde descartar vidro"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_separacao_plastico"
+    },
+    {
+      "dialog_node": "ajuda_separacao_metal",
+      "title": "Ajuda: separação — metal",
+      "type": "standard",
+      "conditions": "#ajuda_separacao && @material:METAL",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "🥫 **Metal (coletor amarelo)**\n\n✅ **Pode:** latas de bebida e de conserva, tampinhas metálicas, papel-alumínio limpo e panelas sem cabo.\n❌ **Atenção:** latas de **tinta ou aerossol** só vão para a reciclagem **vazias e secas**. Com resto de produto, procure um ecoponto.\n\n**Como preparar:** **lave e amasse** as latas."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Próximo passo",
+            "options": [
+              {
+                "label": "Onde descartar metal?",
+                "value": {
+                  "input": {
+                    "text": "onde descartar metal"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_separacao_vidro"
+    },
+    {
+      "dialog_node": "ajuda_separacao_organico",
+      "title": "Ajuda: separação — orgânico",
+      "type": "standard",
+      "conditions": "#ajuda_separacao && @material:ORGANICO",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "🍂 **Orgânico (coletor marrom)**\n\n✅ **Pode (compostagem):** cascas de frutas e legumes, folhas, borra e filtro de café e casca de ovo.\n❌ **Não pode:** carnes, ossos, laticínios, óleo e fezes de animais, porque atraem pragas e atrapalham a compostagem.\n\n**Como preparar:** guarde em um pote fechado e leve a uma **composteira** ou feira parceira."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Próximo passo",
+            "options": [
+              {
+                "label": "Onde descartar orgânico?",
+                "value": {
+                  "input": {
+                    "text": "onde descartar orgânico"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_separacao_metal"
+    },
+    {
+      "dialog_node": "ajuda_separacao_eletronico",
+      "title": "Ajuda: separação — eletrônico",
+      "type": "standard",
+      "conditions": "#ajuda_separacao && @material:ELETRONICO",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "🔋 **Eletrônicos, pilhas e baterias (coletor laranja)**\n\n⚠️ **Nunca vão no lixo comum**, porque contêm metais pesados que contaminam o solo e a água.\n\n✅ **Leve a um ponto específico:** pilhas, baterias, celulares, carregadores, cabos e pequenos aparelhos.\n\n**Como preparar:** apague seus dados do celular, **isole os polos das baterias com fita** e guarde as pilhas em um pote fechado até o descarte."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Próximo passo",
+            "options": [
+              {
+                "label": "Onde descartar eletrônicos?",
+                "value": {
+                  "input": {
+                    "text": "onde descartar eletrônico"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_separacao_organico"
+    },
+    {
+      "dialog_node": "ajuda_separacao_geral",
+      "title": "Ajuda: separação — geral",
+      "type": "standard",
+      "conditions": "#ajuda_separacao",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "A regra de ouro da separação: **limpo, seco e separado por tipo**. ♻️\n\n1. Separe **recicláveis secos** (papel, plástico, vidro e metal) dos **orgânicos**.\n2. **Enxágue** embalagens com restos de comida.\n3. **Eletrônicos e pilhas** vão sempre para pontos específicos.\n4. Na dúvida, consulte o [Catálogo de materiais](/materiais).\n\nSobre qual material você quer saber mais?"
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Escolha um material",
+            "options": [
+              {
+                "label": "Papel",
+                "value": {
+                  "input": {
+                    "text": "papel"
+                  }
+                }
+              },
+              {
+                "label": "Plástico",
+                "value": {
+                  "input": {
+                    "text": "plástico"
+                  }
+                }
+              },
+              {
+                "label": "Vidro",
+                "value": {
+                  "input": {
+                    "text": "vidro"
+                  }
+                }
+              },
+              {
+                "label": "Metal",
+                "value": {
+                  "input": {
+                    "text": "metal"
+                  }
+                }
+              },
+              {
+                "label": "Orgânico",
+                "value": {
+                  "input": {
+                    "text": "orgânico"
+                  }
+                }
+              },
+              {
+                "label": "Eletrônico",
+                "value": {
+                  "input": {
+                    "text": "eletrônico"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_separacao_eletronico"
+    },
+    {
+      "dialog_node": "ajuda_tipo_ecoponto",
+      "title": "Ajuda: o que é ecoponto",
+      "type": "standard",
+      "conditions": "#ajuda_tipos_ponto && @tipo_ponto:ECOPONTO",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "**Ecoponto** é uma área pública, geralmente da prefeitura, para entregar **volumes maiores e materiais variados**: recicláveis, pequenos volumes de entulho, móveis velhos e, em alguns casos, eletrônicos. É gratuito para moradores."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_separacao_geral"
+    },
+    {
+      "dialog_node": "ajuda_tipo_pev",
+      "title": "Ajuda: o que é PEV",
+      "type": "standard",
+      "conditions": "#ajuda_tipos_ponto && @tipo_ponto:PEV",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "**PEV (Ponto de Entrega Voluntária)** são aqueles **contêineres coloridos** de coleta seletiva em praças, estações e parques. São ótimos para **pequenas quantidades** de papel, plástico, vidro e metal no dia a dia."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_tipo_ecoponto"
+    },
+    {
+      "dialog_node": "ajuda_tipo_cooperativa",
+      "title": "Ajuda: o que é cooperativa",
+      "type": "standard",
+      "conditions": "#ajuda_tipos_ponto && @tipo_ponto:COOPERATIVA",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "**Cooperativas** são organizações de **catadores** que fazem a triagem e a venda dos recicláveis. Levar seu material até elas **gera renda** para as famílias cooperadas e garante que ele seja reaproveitado."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_tipo_pev"
+    },
+    {
+      "dialog_node": "ajuda_tipo_parceiro",
+      "title": "Ajuda: o que é parceiro",
+      "type": "standard",
+      "conditions": "#ajuda_tipos_ponto && @tipo_ponto:PARCEIRO",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "**Parceiros** são estabelecimentos, como lojas, mercados e hortas comunitárias, que recebem **materiais específicos**, por exemplo coletores de pilhas e eletrônicos ou composteiras para orgânicos."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_tipo_cooperativa"
+    },
+    {
+      "dialog_node": "ajuda_tipos_geral",
+      "title": "Ajuda: tipos de ponto e selos",
+      "type": "standard",
+      "conditions": "#ajuda_tipos_ponto",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "No mapa você encontra 4 tipos de ponto:\n\n- **Ecoponto:** área pública para volumes maiores e materiais variados.\n- **PEV:** contêineres de coleta seletiva para pequenas quantidades.\n- **Cooperativa:** catadores que triam e vendem o material.\n- **Parceiro:** estabelecimento que recebe materiais específicos.\n\n**Selos:** ✓ **Verificado** indica ponto conferido pela equipe. **Comunidade** indica ponto sugerido por usuários, ainda sem verificação. O **anel colorido** do pino mostra os materiais aceitos."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_tipo_parceiro"
+    },
+    {
+      "dialog_node": "sobre_reuse",
+      "title": "Sobre o ReUse!",
+      "type": "standard",
+      "conditions": "#sobre_reuse",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "O **ReUse!** é uma plataforma de incentivo à reciclagem criada em um projeto acadêmico da FIAP. Ela ajuda você a:\n\n- **Encontrar** pontos de coleta perto de você\n- **Aprender** a separar e preparar cada material\n- **Registrar** seus descartes e acompanhar o seu impacto com EcoPontos, níveis e ranking\n\nEu, o Eco, sou o assistente virtual da plataforma, construído com **IBM Watson**."
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "ajuda_tipos_geral"
+    },
+    {
+      "dialog_node": "menu_ajuda",
+      "title": "Menu: o que o Eco faz",
+      "type": "standard",
+      "conditions": "#o_que_voce_faz",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Eu faço duas coisas:\n\n**⚡ Tarefas na plataforma**\n- Registrar e desfazer descartes\n- Encontrar pontos de coleta perto de você\n- Consultar EcoPontos, nível, missão, ranking e histórico\n- Favoritar e remover materiais, e cadastrar materiais no catálogo\n- Abrir páginas (*“abrir o mapa”*)\n\n**💬 Orientações**\n- Como registrar descartes e sugerir pontos\n- Como ganhar EcoPontos e conquistas\n- Como separar cada material\n- Localização, rotas, favoritos e conta"
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Experimente",
+            "options": [
+              {
+                "label": "Registrar descarte",
+                "value": {
+                  "input": {
+                    "text": "quero registrar um descarte"
+                  }
+                }
+              },
+              {
+                "label": "Achar ponto de coleta",
+                "value": {
+                  "input": {
+                    "text": "onde descartar perto de mim"
+                  }
+                }
+              },
+              {
+                "label": "Meus EcoPontos",
+                "value": {
+                  "input": {
+                    "text": "quantos ecopontos eu tenho"
+                  }
+                }
+              },
+              {
+                "label": "Missão do dia",
+                "value": {
+                  "input": {
+                    "text": "qual a missão de hoje"
+                  }
+                }
+              },
+              {
+                "label": "Como ganho EcoPontos?",
+                "value": {
+                  "input": {
+                    "text": "como funcionam os ecopontos"
+                  }
+                }
+              },
+              {
+                "label": "Como separar o lixo?",
+                "value": {
+                  "input": {
+                    "text": "como separar o lixo"
+                  }
+                }
+              },
+              {
+                "label": "Como sugerir um ponto?",
+                "value": {
+                  "input": {
+                    "text": "como sugerir um ponto de coleta"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "sobre_reuse"
+    },
+    {
+      "dialog_node": "saudacao",
+      "title": "Saudação",
+      "type": "standard",
+      "conditions": "#saudacao",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Oi! 👋 Sou o Eco. Em que posso ajudar hoje?"
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Sugestões",
+            "options": [
+              {
+                "label": "Registrar descarte",
+                "value": {
+                  "input": {
+                    "text": "quero registrar um descarte"
+                  }
+                }
+              },
+              {
+                "label": "Achar ponto de coleta",
+                "value": {
+                  "input": {
+                    "text": "onde descartar perto de mim"
+                  }
+                }
+              },
+              {
+                "label": "Meus EcoPontos",
+                "value": {
+                  "input": {
+                    "text": "quantos ecopontos eu tenho"
+                  }
+                }
+              },
+              {
+                "label": "Missão do dia",
+                "value": {
+                  "input": {
+                    "text": "qual a missão de hoje"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "menu_ajuda"
+    },
+    {
+      "dialog_node": "agradecimento",
+      "title": "Agradecimento",
+      "type": "standard",
+      "conditions": "#agradecimento",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Imagina! O planeta agradece também. 🌎 Precisa de mais alguma coisa?"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "saudacao"
+    },
+    {
+      "dialog_node": "despedida",
+      "title": "Despedida",
+      "type": "standard",
+      "conditions": "#despedida",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Até mais! Continue separando direitinho. ♻️"
+              }
+            ],
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "previous_sibling": "agradecimento"
+    },
+    {
+      "dialog_node": "nao_entendi",
+      "title": "Não entendi",
+      "type": "standard",
+      "conditions": "anything_else",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "values": [
+              {
+                "text": "Hmm, não entendi. 🤔 Tente com outras palavras ou escolha uma opção abaixo. Digite **ajuda** para ver tudo o que eu sei fazer."
+              }
+            ],
+            "selection_policy": "sequential"
+          },
+          {
+            "response_type": "option",
+            "title": "Posso ajudar com",
+            "options": [
+              {
+                "label": "Registrar descarte",
+                "value": {
+                  "input": {
+                    "text": "quero registrar um descarte"
+                  }
+                }
+              },
+              {
+                "label": "Achar ponto de coleta",
+                "value": {
+                  "input": {
+                    "text": "onde descartar perto de mim"
+                  }
+                }
+              },
+              {
+                "label": "Meus EcoPontos",
+                "value": {
+                  "input": {
+                    "text": "quantos ecopontos eu tenho"
+                  }
+                }
+              },
+              {
+                "label": "Missão do dia",
+                "value": {
+                  "input": {
+                    "text": "qual a missão de hoje"
+                  }
+                }
+              },
+              {
+                "label": "Como ganho EcoPontos?",
+                "value": {
+                  "input": {
+                    "text": "como funcionam os ecopontos"
+                  }
+                }
+              },
+              {
+                "label": "Como separar o lixo?",
+                "value": {
+                  "input": {
+                    "text": "como separar o lixo"
+                  }
+                }
+              },
+              {
+                "label": "Como sugerir um ponto?",
+                "value": {
+                  "input": {
+                    "text": "como sugerir um ponto de coleta"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "previous_sibling": "despedida"
+    }
+  ]
+}

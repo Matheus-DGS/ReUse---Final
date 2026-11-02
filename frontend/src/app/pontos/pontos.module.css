@@ -1,0 +1,91 @@
+.pagina {
+  padding-top: 40px;
+}
+
+.cabecalho {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: end;
+}
+
+.titulo {
+  font-size: clamp(32px, 4.4vw, 46px);
+  line-height: 1.08;
+  margin: 10px 0 12px;
+  color: var(--acento-escuro);
+}
+
+.descricao {
+  color: var(--tinta-suave);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 58ch;
+}
+
+.numeros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin: 22px 0 0;
+}
+
+.numeros dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tinta-fraca);
+}
+
+.numeros dd {
+  margin: 2px 0 0;
+  font-family: var(--fonte-display), serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.sugerir {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 40px;
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--acento-escuro);
+  color: #e3efe7;
+}
+
+.sugerir p {
+  margin: 6px 0 0;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+.sugerirTitulo {
+  color: #fff;
+  font-size: 24px;
+}
+
+.sugerir :global(.btn-primario) {
+  background: #fff;
+  color: var(--acento-escuro);
+}
+
+.nota {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+}
+
+@media (max-width: 900px) {
+  .cabecalho {
+    grid-template-columns: 1fr;
+  }
+
+  .sugerir {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

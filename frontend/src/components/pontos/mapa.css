@@ -1,0 +1,133 @@
+/* Estilos globais do mapa: os marcadores do Leaflet são criados fora da árvore React,
+   por isso não podem usar CSS Modules. */
+
+.mapa-reuse {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--raio);
+  background: var(--fundo-alt);
+  font-family: var(--fonte-corpo), system-ui, sans-serif;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.mapa-reuse .leaflet-tile-pane {
+  filter: saturate(0.35) brightness(1.04) contrast(0.95);
+}
+
+/* Pino do ReUse!: o anel mostra as cores dos materiais aceitos no ponto */
+.pino-reuse {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--anel);
+  box-shadow: 0 4px 10px -2px rgba(28, 36, 32, 0.45);
+  transition: transform 0.18s ease;
+}
+
+.pino-reuse::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.pino-reuse span {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--acento-escuro);
+}
+
+.pino-reuse::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(28, 36, 32, 0.55);
+  border-bottom: 0;
+}
+
+.pino-reuse.selecionado {
+  transform: scale(1.25) translateY(-4px);
+}
+
+.pino-reuse.selecionado::after {
+  background: var(--tinta);
+}
+
+.pino-reuse.selecionado span {
+  color: #fff;
+}
+
+.pino-reuse.comunidade span {
+  color: #7a5220;
+}
+
+.voce-esta-aqui {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2f6fd6;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 0 rgba(47, 111, 214, 0.5);
+  animation: pulsar-azul 2s infinite;
+}
+
+@keyframes pulsar-azul {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(47, 111, 214, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(47, 111, 214, 0);
+  }
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.popup-reuse strong {
+  display: block;
+  font-family: var(--fonte-display), serif;
+  font-size: 15px;
+  color: var(--acento-escuro);
+  margin-bottom: 2px;
+}
+
+.popup-reuse p {
+  margin: 0 0 8px !important;
+  color: var(--tinta-suave);
+}
+
+.popup-reuse .popup-cores {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.popup-reuse a {
+  color: var(--acento) !important;
+  font-weight: 600;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: 6px;
+  right: 6px;
+}
