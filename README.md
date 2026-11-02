@@ -187,16 +187,6 @@ Schema em [`backend/prisma/schema.prisma`](backend/prisma/schema.prisma).
   Tudo que grava dados pede confirmação e exige login.
 - Aceita **voz**: ditado pelo microfone e leitura das respostas (Web Speech API).
 
-Detalhes em [`backend/watson/README.md`](backend/watson/README.md).
-
----
-
-## Documentação complementar
-
-- [`docs/ENTREGA.md`](docs/ENTREGA.md) — conteúdo do PDF da entrega (links de deploy e do vídeo)
-- [`docs/ROTEIRO-VIDEO-PITCH.md`](docs/ROTEIRO-VIDEO-PITCH.md) — roteiro do vídeo de 4 minutos
-- [`docs/API.md`](docs/API.md) — referência dos endpoints da API
-
 ---
 
 Projeto acadêmico · FIAP · Matheus Dias Gomes Silva (RM563021) · 2TWDOA
